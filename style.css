@@ -1,0 +1,89 @@
+header{
+    background-color: white;
+    font-family: Arial;
+    position: relative;
+    height: 500px;
+}
+h1{
+    background-color: #00447C;
+    color: #FFCB00;
+    width: 100%;
+    margin-top: 0px;
+    padding-bottom: 5px;
+}
+#containerImages{
+    width: 36%;
+    margin: 0 auto;
+    position: relative;
+}
+#scholasticaLogo, #courseLogo{
+    height: 200px;
+    width: 200px;
+    background-color: #D9D9D9;
+    border-radius: 10px;
+}
+#scholasticaLogo{
+    margin-right: 20px;
+}
+#courseLogo{
+    margin-left: 20px;
+}
+#scholasticaCrossoutLeft, #courseCrossoutLeft{
+    transform: rotate(45deg);
+    transform-origin: 0 0; 
+    border: 1px black solid;
+}
+#scholasticaCrossoutRight, #courseCrossoutRight{
+    transform: rotate(135deg); /*135*/
+    transform-origin: 99px 42px; /* apparently this has to change from the right to the left*/
+    border: 1px black solid; 
+} 
+#title, #projectTitle{
+    text-align: center; 
+    color: #FFCB00; 
+    font-size: 40px; 
+    font-family: Arial; 
+    font-weight: 400;
+    word-wrap: break-word;
+    padding-bottom: 20px;
+}
+
+/* why are these not centered on the page ?? */
+/* would a table layout help? */
+
+#studentUsername{
+    top: 50%;
+    left: 25%;
+    position: relative;
+    width: 50%;
+    margin-bottom: 25px;
+    mix-blend-mode: multiply; 
+    background: #D9D9D9
+}
+#studentPassword{
+    top: 50%;
+    left: 25%;
+    position: relative;
+    width: 50%;
+    margin-bottom: 25px;
+    mix-blend-mode: multiply; 
+    background: #D9D9D9
+}
+#usernameLabel, #passwordLabel{
+    font-size:60px;
+    padding-right: 10%;
+}
+#signInHeader{
+    font-size:60px;
+    text-align: center;
+}
+#signOnsubmit{
+    top: 50%;
+    left: 48%;
+    position: relative;
+}
+/*
+#username, #password{
+    float: right;
+}
+*/
