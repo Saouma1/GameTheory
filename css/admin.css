@@ -1,0 +1,39 @@
+body{
+    font-family: Arial;
+    height: fit-content;
+}
+h1{
+    text-align: center;
+    color: #00447C; /* CSS Blue */
+    width: 100%;
+    margin-top: 0px;
+    padding-bottom: 5px;
+    position: absolute;
+    top: 90px;
+}
+#redBlackInfo, #wheatSteelInfo, #userInfo, #links{
+    text-align: center;
+    color: #00447C;
+    font-size: 24px;
+    width: 100%;
+    position: absolute;
+    margin: 0 auto;
+    left: -20%; /*why does this have to be negative*/
+    top: 40%;
+}
+#userInfo{
+    left: 0;
+    top: 20%;
+}
+#redBlackInfo{
+    left: -20%; /*why does this have to be negative*/
+    top: 40%;
+}
+#wheatSteelInfo{
+    left: 20%;
+    top: 37.5%;
+}
+#links{
+    left: 0%;
+    top: 75%;
+}

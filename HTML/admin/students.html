@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="..\..\css\header.css"> <!-- need to direct to another folder -->
+        <link rel="stylesheet" href="..\..\css\admin.css">
+        <script src="..\..\javascript\studentRetrieve.js" defer></script>
+    </head>
+    <iframe scrolling="no" style="border:none;" width="100%" src="..\..\HTML\header.html"></iframe>
+    <body>
+        <h1 id="studentHeader">Student ()</h1>
+        <div id ="userInfo">
+            <p>
+                <span id="firstNameDisplay">First Name:</span> <br>
+                <span id="lastNameDisplay">Last Name:</span> <br>
+                <span id="emailDisplay">Email:</span> <br>
+            </p>
+        </div>
+        <div id ="redBlackInfo">
+            <p>
+                Number of Red/Black Games Played: <span id="redBlackNum">0</span> <br> <!---3--->
+                Highest Final Score: <span id="redBlackHigh">0</span> <br><!---900--->
+                Lowest Final Score: <span id="redBlackLow">0</span> <br><!---400--->
+                Game Point Average: <span id="redBlackGPA">0</span> <br> <!--633.33--->
+            </p>
+        </div>
+        <div id ="wheatSteelInfo">
+            <p>
+                Number of Wheat & Steel Games Played: <span id="wheatSteelNum">0</span> <br> <!---2--->
+                Highest Total Wheat Production: <span id="wheatHigh">0</span> <br> <!---100--->
+                Wheat Consumption Goals Met: <span id="wheatGoalNum">0</span> <br> <!--- 1 / 2 (50%) --->
+                Highest Total Steel Production: <span id="steelHigh">0</span> <br> <!---750--->
+                Steel Consumption Goals Met: <span id="steelGoalNum">0</span> <br> <!--- 2 / 2 (100%) --->
+            </p>
+        </div>
+        <!--table w/ links-->
+        <table id="links">
+            <tr>
+                <!--All Students-->
+                <td>
+                    <a href="index.html">Back to Home</a> <!--admin index-->
+                </td>
+                <!--All Games-->
+            </tr>
+        </table>
+    </body>
+    <script language="javascript">
+        window.onload = function(e){ 
+            displayInfo();
+        }
+    </script>
+</html>

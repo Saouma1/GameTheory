@@ -9,27 +9,30 @@ let numRecords = (localStorage.length / 3); // three fields per record
     // could use numRecords
 
 function submitForm(){ // rewrites any values previously stored
-    if(document.getElementById("firstName") != null){
-        firstNameValue = document.getElementById('firstName').value;
+    // make sure at least one is not null
+    if (document.getElementById("firstName") != null || document.getElementById("lastName") != null || document.getElementById("email") != null){
+        if(document.getElementById("firstName") != null){
+            firstNameValue = document.getElementById('firstName').value;
+        }
+        else{
+            firstNameValue = "n/a";
+        }
+        if(document.getElementById("lastName") != null){
+            lastNameValue = document.getElementById('lastName').value;
+        }
+        else{
+            lastNameValue = "n/a";
+        }
+        if(document.getElementById("email") != null){
+            emailValue = document.getElementById('email').value;
+        }
+        else{
+            emailValue = "n/a";
+        }
+        localStorage.setItem("firstName", firstNameValue); 
+        localStorage.setItem("lastName", lastNameValue);
+        localStorage.setItem("email", emailValue);
     }
-    else{
-        firstNameValue = "n/a";
-    }
-    if(document.getElementById("lastName") != null){
-        lastNameValue = document.getElementById('lastName').value;
-    }
-    else{
-        lastNameValue = "n/a";
-    }
-    if(document.getElementById("email") != null){
-        emailValue = document.getElementById('email').value;
-    }
-    else{
-        emailValue = "n/a";
-    }
-    localStorage.setItem("firstName", firstNameValue); 
-    localStorage.setItem("lastName", lastNameValue);
-    localStorage.setItem("email", emailValue);
     // sessionStorage saves in the current session
         // localStorage saves between sessions
 }
