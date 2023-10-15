@@ -16,24 +16,9 @@ h1{
     color: #00447C;
     font-size: 24px;
     width: 100%;
-    position: absolute;
-    margin: 0 auto;
-    left: -20%; /*why does this have to be negative*/
-    top: 40%;
+    position: relative;
 }
+
 #userInfo{
-    left: 0;
-    top: 20%;
-}
-#redBlackInfo{
-    left: -20%; /*why does this have to be negative*/
-    top: 40%;
-}
-#wheatSteelInfo{
-    left: 20%;
-    top: 37.5%;
-}
-#links{
-    left: 0%;
-    top: 75%;
+    margin-top: 0;
 }
