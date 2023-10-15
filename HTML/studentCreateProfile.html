@@ -1,34 +1,59 @@
+CreateAProfile
 <!DOCTYPE html>
-<html>
-    <head>
-        <link rel="stylesheet" href="..\css\header.css">
-        <link rel="stylesheet" href="..\css\createProfile.css">
-        <script src="..\javascript\createProfile.js" defer></script>
-    </head>
-    <!--- import the header instead of including its elements every time --->
-    <iframe scrolling="no" style="border:none;" width="100%" src="header.html"></iframe>
-    <body>
-        <h1>
-            Create Profile
-        </h1>
-        <br>
-        <form method="POST" action="profileCreate.html">
-            <div id="studentFirst">
-                <label for="firstName" name="firstNameLabel" id="firstNameLabel">&nbsp;&nbsp;First Name</label>
-                &nbsp;
-                <input name="firstName" id="firstName" required>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Create a Profile</title>
+    <script type="text/javascript">
+        function validateForm() {
+            var email = document.getElementById("email").value;
+            var firstName = document.getElementById("firstName").value;
+            var lastName = document.getElementById("lastName").value;
+            var password = document.getElementById("password").value;
+            var verifyPassword = document.getElementById("verifyPassword").value;
+
+            if(email === "" || firstName === "" || lastName === "" || password === "" || verifyPassword === "") {
+                alert("All fields are required!");
+                return false;
+            }
+
+            if(password !== verifyPassword) {
+                alert("Passwords do not match!");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <div id="createProfile" style="width: 100%; height: 100%; position: relative">
+        <h1>Create a Profile</h1>
+        <form method="POST" action="studentSignOn.html" onsubmit="return validateForm()">
+            <div>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
             </div>
-            <div id="studentLast">
-                <label for="lastName" name="lastNameLabel" id="lastNameLabel">&nbsp;&nbsp;Last Name</label>
-                &nbsp; &nbsp;
-                <input name="lastName" id="lastName" required>
+            <div>
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" name="firstName" required>
             </div>
-            <div id="studentEmail">
-                <label for="email" name="emailLabel" id="emailLabel">&nbsp;&nbsp;CSS Email</label>
-                &nbsp; &nbsp;
-                <input name="email" id="email" required>
+            <div>
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" name="lastName" required>
             </div>
-            <input type="submit" name="createSubmit" id="createSubmit" value="Submit" onclick="submitForm()">
+            <div>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div>
+                <label for="verifyPassword">Verify Password:</label>
+                <input type="password" id="verifyPassword" name="verifyPassword" required>
+            </div>
+            <input type="submit" value="Create Profile">
         </form>
-    </body>
+    </div>
+</body>
 </html>

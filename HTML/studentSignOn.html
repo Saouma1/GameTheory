@@ -1,28 +1,47 @@
+STUDENTSIGNON
 <!DOCTYPE html>
 <html>
     <head>
         <link rel="stylesheet" href="style.css">
-        <script src="script.js" defer></script>
+
+        <script type="text/javascript">
+            function submitForm() {
+                var email = document.getElementById("Email").value;
+                var password = document.getElementById("password").value;
+        
+                // Add your validation logic here if needed, e.g.,
+                if(email === "" || password === "") {
+                    alert("Email and password are required!");
+                    return false;
+                }
+        
+                // If everything is OK, submit the form
+                return true;
+            }
+        </script>
+        
     </head>
     <body>
         <!---this design needs a definite update according to the wireframes--->
+        
         <div id="studentSignOn" style="width: 100%; height: 100%; position: relative">
             <h1 id="signInHeader">
                 Sign In
             </h1>
-            <form method="POST" action="signOn.html">
+            <form method="POST" action="index.html">
                 <div id="studentUsername">
-                    <label for="username" name="usernameLabel" id="usernameLabel">&nbsp;&nbsp;Username</label>
+                    <label for="Email" name="emailLabel" id="email">&nbsp;&nbsp;Email</label>
                     &nbsp;
-                    <input name="username" id="username" required>
+                    <input name="Email" id="Email" required>
                 </div>
                 <div id="studentPassword">
                     <label for="password" name="passwordLabel" id="passwordLabel">&nbsp;&nbsp;Password</label>
                     &nbsp; &nbsp;
                     <input name="password" id="password" required>
                 </div>
-                <input type="submit" name="signOnsubmit" id="signOnsubmit" value="Submit" onclick="submitForm()">
+                <input type="submit" name="signOnsubmit" id="signOnsubmit" value="Submit" onclick="return submitForm()">
             </form>
+            <button onclick="window.location.href='studentCreateProfile.html';">Create New Profile</button>
         </div>
     </body>
 </html>
