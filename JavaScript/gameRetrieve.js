@@ -1,4 +1,4 @@
-// find max ID in DB
+// use ID in DB
 
 function displayInfoRedBlack(){
     let gameName1 = localStorage.getItem("gameName_1");
@@ -59,16 +59,26 @@ function displayInfoWheatSteel(){
     let teamsFour = localStorage.getItem("teamsFour");
     let periodNum = localStorage.getItem("periodNum");
 
-    // need to loop through the array to display a space after each name
+    // set in local storage as one string
+        // need to loop through the array to display a space after each name
     let bothGoals = localStorage.getItem("bothGoals");
     for (let i = 0; i < bothGoals.length; i++) {
         if (bothGoals[i] == ","){
-            bothGoals[i+1] == " ";
+            bothGoals = bothGoals.slice(0, (i + 1)) + " " + bothGoals.slice((i + 1));
         }
-        console.log(bothGoals[i]); // set in local storage as one string
-      }
+    }
     let oneGoal = localStorage.getItem("oneGoal");
+    for (let i = 0; i < oneGoal.length; i++) {
+        if (oneGoal[i] == ","){
+            oneGoal = oneGoal.slice(0, (i + 1)) + " " + oneGoal.slice((i + 1));
+        }
+    }
     let noGoals = localStorage.getItem("noGoals");
+    for (let i = 0; i < noGoals.length; i++) {
+        if (noGoals[i] == ","){
+            noGoals = noGoals.slice(0, (i + 1)) + " " + noGoals.slice((i + 1));
+        }
+    }
 
     let wheatProduceTotal = localStorage.getItem("wheatProduceTotal");
     let wheatProduceAverage = localStorage.getItem("wheatProduceAverage");
