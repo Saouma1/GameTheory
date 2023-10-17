@@ -10,8 +10,25 @@ h1{
     padding-bottom: 5px;
     position: absolute;
     top: 90px;
+
 }
-#gameInfo, #teamInfo, #cardInfo, #playerInfo, #links{
+#gameInfo, #links{
+    text-align: center;
+    color: #00447C;
+    font-size: 24px;
+    width: 100%;
+    position: relative;
+}
+
+#teamInfo, #cardInfo, #playerInfo{
+    text-align: center;
+    color: #00447C;
+    font-size: 24px;
+    width: 100%;
+    position: relative;
+}
+
+#gameResults, #wheatInfo, #steelInfo{
     text-align: center;
     color: #00447C;
     font-size: 24px;

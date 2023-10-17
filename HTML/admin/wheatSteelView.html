@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="..\..\css\header.css">
+        <link rel="stylesheet" href="..\..\css\gameView.css">
+        <script src="..\..\javascript\gameRetrieve.js" defer></script>
+        <script src="..\..\javascript\createGame.js" defer></script> <!-- test -->
+    <iframe scrolling="no" style="border:none;" width="100%" src="..\..\HTML\header.html"></iframe>
+    <body>
+        <h1 id="studentHeader_2">Game ()</h1>
+        <div id="gameInfo">
+            Game Name: <span id="gameName_2">Game Name</span> <br>
+            Game Date: <span id="gameDate_2">12-31-1969</span> <br>
+        </div>
+        <br>
+        <div id="teamInfo">
+            Players: <span id="playerNum_2">0</span> <br>
+            Teams of Four: <span id="teamsFour">0</span> <br>
+            Periods: <span id="periodNum">0</span> <br> 
+        </div>
+        <br>
+        <div id="gameResults">
+            Teams that Met Both Goals: <span id="bothGoalNames">Susan, Joe</span> <br> 
+            Teams that Met One Goal: <span id="oneGoalNames">Susan, Joe</span> <br> 
+            Teams that Met No Goals: <span id="noGoalNames">Susan, Joe</span> <br>
+        </div>
+        <br>
+        <div id="wheatInfo">
+            Total Amount of Wheat Produced: <span id="wheatProduceTotal">0</span> <br> 
+            Average Amount of Wheat Produced per Period: <span id="wheatProduceAverage">0</span> <br> 
+            Total Amount of Wheat Consumed: <span id="wheatConsumeTotal">0</span> <br> 
+            Average Amount of Wheat Consumed: <span id="wheatConsumeAverage">0</span> <br> 
+            Total Amount of Wheat Traded: <span id="wheatTradeTotal">0</span> <br> 
+            Average Amount of Wheat Traded: <span id="wheatTradeAverage">0</span> <br> 
+        </div>
+        <br>
+        <div id="steelInfo">
+            Total Amount of Steel Produced: <span id="steelProduceTotal">0</span> <br> 
+            Average Amount of Steel Produced per Period: <span id="steelProduceAverage">0</span> <br> 
+            Total Amount of Steel Consumed: <span id="steelConsumeTotal">0</span> <br> 
+            Average Amount of Steel Consumed: <span id="steelConsumeAverage">0</span> <br> 
+            Total Amount of Steel Traded: <span id="steelTradeTotal">0</span> <br> 
+            Average Amount of Steel Traded: <span id="steelTradeAverage">0</span> <br> 
+        </div>
+        <br>
+        <!--table w/ links-->
+        <!-- TODO: consider making row of links an admin footer -->
+        <table id="links">
+            <tr>
+                <td>
+                    <a href="index.html">All Students</a> <!-- TODO: change link from index to all students -->
+                </td>
+                <td>
+                    <a href="index.html">Back to Home</a> <!--admin index-->
+                </td>
+                <td>
+                    <a href="index.html">All Games</a> <!-- TODO: change link from index to all games -->
+                </td>
+            </tr>
+        </table>
+    </body>
+    <script language="javascript">
+        window.onload = function(e){ 
+            displayInfoWheatSteel();
+        }
+    </script>
+</html>
