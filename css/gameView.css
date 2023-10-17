@@ -1,0 +1,24 @@
+body{
+    font-family: Arial;
+    height: fit-content;
+}
+h1{
+    text-align: center;
+    color: #00447C; /* CSS Blue */
+    width: 100%;
+    margin-top: 0px;
+    padding-bottom: 5px;
+    position: absolute;
+    top: 90px;
+}
+#gameInfo, #teamInfo, #cardInfo, #playerInfo, #links{
+    text-align: center;
+    color: #00447C;
+    font-size: 24px;
+    width: 100%;
+    position: relative;
+}
+
+#userInfo{
+    margin-top: 0;
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="..\..\css\header.css">
+        <link rel="stylesheet" href="..\..\css\gameView.css">
+        <script src="..\..\javascript\gameRetrieve.js" defer></script>
+        <!---<script src="..\..\javascript\createGame.js" defer></script>---> <!-- test -->
+    <iframe scrolling="no" style="border:none;" width="100%" src="..\..\HTML\header.html"></iframe>
+    <body>
+        <h1 id="studentHeader">Game ()</h1>
+        <div id ="gameInfo">
+            Game Name: <span id="gameName_1">Game Name</span> <br>
+            Game Date: <span id="gameDate_1">12-31-1969</span> <br>
+        </div>
+        <br>
+        <div id ="teamInfo">
+            Players: <span id="playerNum_1">0</span> <br>
+            Pairs: <span id="pairNum_1">0</span> <br>
+            Rounds: <span id="roundNum_1">0</span> <br> 
+        </div>
+        <br>
+        <div id ="cardInfo">
+            Total Number of Black Cards Played: <span id="blackTotal">0</span> <br> 
+            Average Number of Black Cards Played per Round: <span id="blackAverage">0</span> <br> 
+            Total Number of Red Cards Played: <span id="redTotal">0</span> <br> 
+            Average Number of Red Cards Played per Round: <span id="redAverage">0</span> <br> 
+        </div>
+        <br>
+        <div id ="playerInfo">
+            Player with Highest Score: <span id="highestName">Susan</span> - <span id="highestScore">0</span> <br> 
+            Player with Lowest Score: <span id="lowestName">Susan</span> - <span id="lowestScore">0</span> <br> 
+            <br>
+            Player with Highest Number of Black Cards: <span id="highestBlackName">Susan</span> - <span id="highestBlackScore">0</span> <br> 
+            Player with Lowest Number of Black Cards: <span id="lowestBlackName">Susan</span> - <span id="lowestBlackScore">0</span> <br> 
+            Player with Highest Number of Red Cards: <span id="highestRedName">Susan</span> - <span id="highestRedScore">0</span> <br> 
+            Player with Lowest Number of Red Cards: <span id="lowestRedName">Susan</span> - <span id="lowestRedScore">0</span> <br> 
+        </div>
+        <br>
+        <!--table w/ links-->
+        <!-- TODO: consider making row of links an admin footer -->
+        <table id="links">
+            <tr>
+                <td>
+                    <a href="index.html">All Students</a> <!-- TODO: change link from index to all students -->
+                </td>
+                <td>
+                    <a href="index.html">Back to Home</a> <!--admin index-->
+                </td>
+                <td>
+                    <a href="index.html">All Games</a> <!-- TODO: change link from index to all games -->
+                </td>
+            </tr>
+        </table>
+    </body>
+    <script language="javascript">
+        window.onload = function(e){ 
+            displayInfo();
+        }
+    </script>
+</html>
