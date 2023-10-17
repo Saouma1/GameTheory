@@ -1,8 +1,6 @@
 // find max ID in DB
 
-function displayInfo(){
-    // automatically returns empty string if no value, null if field does not exist
-
+function displayInfoRedBlack(){
     let gameName1 = localStorage.getItem("gameName_1");
     let gameDate1 = localStorage.getItem("gameDate_1");
     let playerNum1 = localStorage.getItem("playerNum_1");
@@ -28,8 +26,7 @@ function displayInfo(){
     let lowestRedName = localStorage.getItem("lowestRedName");
     let lowestRedScore = localStorage.getItem("lowestRedScore");
 
-    document.getElementById('studentHeader').innerHTML = "Game (" + gameName1 + ")";
-
+    document.getElementById('studentHeader_1').innerHTML = "Game (" + gameName1 + ")";
     document.getElementById('gameName_1').innerHTML = gameName1;
     document.getElementById('gameDate_1').innerHTML = gameDate1;
     document.getElementById('playerNum_1').innerHTML = playerNum1;
@@ -54,4 +51,61 @@ function displayInfo(){
     document.getElementById('highestRedScore').innerHTML = highestRedScore;
     document.getElementById('lowestRedName').innerHTML = lowestRedName;
     document.getElementById('lowestRedScore').innerHTML = lowestRedScore;
+}
+function displayInfoWheatSteel(){
+    let gameName2 = localStorage.getItem("gameName_2");
+    let gameDate2 = localStorage.getItem("gameDate_2");
+    let playerNum2 = localStorage.getItem("playerNum_2");
+    let teamsFour = localStorage.getItem("teamsFour");
+    let periodNum = localStorage.getItem("periodNum");
+
+    // need to loop through the array to display a space after each name
+    let bothGoals = localStorage.getItem("bothGoals");
+    for (let i = 0; i < bothGoals.length; i++) {
+        if (bothGoals[i] == ","){
+            bothGoals[i+1] == " ";
+        }
+        console.log(bothGoals[i]); // set in local storage as one string
+      }
+    let oneGoal = localStorage.getItem("oneGoal");
+    let noGoals = localStorage.getItem("noGoals");
+
+    let wheatProduceTotal = localStorage.getItem("wheatProduceTotal");
+    let wheatProduceAverage = localStorage.getItem("wheatProduceAverage");
+    let wheatConsumeTotal = localStorage.getItem("wheatConsumeTotal");
+    let wheatConsumeAverage = localStorage.getItem("wheatConsumeAverage");
+    let wheatTradeTotal = localStorage.getItem("wheatTradeTotal");
+    let wheatTradeAverage = localStorage.getItem("wheatTradeAverage");
+
+    let steelProduceTotal = localStorage.getItem("steelProduceTotal");
+    let steelProduceAverage = localStorage.getItem("steelProduceAverage");
+    let steelConsumeTotal = localStorage.getItem("steelConsumeTotal");
+    let steelConsumeAverage = localStorage.getItem("steelConsumeAverage");
+    let steelTradeTotal = localStorage.getItem("steelTradeTotal");
+    let steelTradeAverage = localStorage.getItem("steelTradeAverage");
+
+    document.getElementById('studentHeader_2').innerHTML = "Game (" + gameName2 + ")";
+    document.getElementById('gameName_2').innerHTML = gameName2;
+    document.getElementById('gameDate_2').innerHTML = gameDate2;
+    document.getElementById('playerNum_2').innerHTML = playerNum2;
+    document.getElementById('teamsFour').innerHTML = teamsFour;
+    document.getElementById('periodNum').innerHTML = periodNum;
+
+    document.getElementById('bothGoalNames').innerHTML = bothGoals;
+    document.getElementById('oneGoalNames').innerHTML = oneGoal;
+    document.getElementById('noGoalNames').innerHTML = noGoals;
+
+    document.getElementById('wheatProduceTotal').innerHTML = wheatProduceTotal;
+    document.getElementById('wheatProduceAverage').innerHTML = wheatProduceAverage;
+    document.getElementById('wheatConsumeTotal').innerHTML = wheatConsumeTotal;
+    document.getElementById('wheatConsumeAverage').innerHTML = wheatConsumeAverage;
+    document.getElementById('wheatTradeTotal').innerHTML = wheatTradeTotal;
+    document.getElementById('wheatTradeAverage').innerHTML = wheatTradeAverage;
+
+    document.getElementById('steelProduceTotal').innerHTML = steelProduceTotal;
+    document.getElementById('steelProduceAverage').innerHTML = steelProduceAverage;
+    document.getElementById('steelConsumeTotal').innerHTML = steelConsumeTotal;
+    document.getElementById('steelConsumeAverage').innerHTML = steelConsumeAverage;
+    document.getElementById('steelTradeTotal').innerHTML = steelTradeTotal;
+    document.getElementById('steelTradeAverage').innerHTML = steelTradeAverage;
 }
