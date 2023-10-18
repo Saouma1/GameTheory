@@ -26,9 +26,9 @@ localStorage.setItem("redTotal", 104);
 localStorage.setItem("redAverage", 13);
 // player stats (general)
 localStorage.setItem("highestName", "Jack");
-localStorage.setItem("highestScore", 1550);
+localStorage.setItem("highestScore", 1400);
 localStorage.setItem("lowestName", "Sam");
-localStorage.setItem("lowestScore", 150);
+localStorage.setItem("lowestScore", 200);
 // player stats (specific)
 localStorage.setItem("highestBlackName", "Sam");
 localStorage.setItem("highestBlackScore", 7);
