@@ -13,25 +13,31 @@ CreateAProfile
             var lastName = document.getElementById("lastName").value;
             var password = document.getElementById("password").value;
             var verifyPassword = document.getElementById("verifyPassword").value;
-
+    
             if(email === "" || firstName === "" || lastName === "" || password === "" || verifyPassword === "") {
                 alert("All fields are required!");
                 return false;
             }
-
+    
             if(password !== verifyPassword) {
                 alert("Passwords do not match!");
                 return false;
             }
-
+    
+            // Saving the values to the local storage when the form is valid
+            localStorage.setItem("firstNameDisplay", firstName);
+            localStorage.setItem("lastNameDisplay", lastName);
+            localStorage.setItem("emailDisplay", email);
+    
             return true;
         }
     </script>
+    
 </head>
 <body>
     <div id="createProfile" style="width: 100%; height: 100%; position: relative">
         <h1>Create a Profile Student</h1>
-        <form method="POST" action="profileCreate.html" onsubmit="return validateForm()">
+        <form method="POST" action="studentProfileCreated.html" onsubmit="return validateForm()">
             <div>
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" required>

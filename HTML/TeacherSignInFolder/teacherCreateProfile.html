@@ -1,0 +1,65 @@
+CreateAProfile
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Create a Profile</title>
+    <script type="text/javascript">
+        function validateForm() {
+            var email = document.getElementById("email").value;
+            var firstName = document.getElementById("firstName").value;
+            var lastName = document.getElementById("lastName").value;
+            var password = document.getElementById("password").value;
+            var verifyPassword = document.getElementById("verifyPassword").value;
+    
+            if(email === "" || firstName === "" || lastName === "" || password === "" || verifyPassword === "") {
+                alert("All fields are required!");
+                return false;
+            }
+    
+            if(password !== verifyPassword) {
+                alert("Passwords do not match!");
+                return false;
+            }
+    
+            // Saving the values to the local storage when the form is valid
+            localStorage.setItem("firstNameDisplay", firstName);
+            localStorage.setItem("lastNameDisplay", lastName);
+            localStorage.setItem("emailDisplay", email);
+    
+            return true;
+        }
+    </script>
+    
+</head>
+<body>
+    <div id="createProfile" style="width: 100%; height: 100%; position: relative">
+        <h1>Create a Profile Student</h1>
+        <form method="POST" action="profileCreate.html" onsubmit="return validateForm()">
+            <div>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div>
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" name="firstName" required>
+            </div>
+            <div>
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" name="lastName" required>
+            </div>
+            <div>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div>
+                <label for="verifyPassword">Verify Password:</label>
+                <input type="password" id="verifyPassword" name="verifyPassword" required>
+            </div>
+            <input type="submit" value="Create Profile">
+        </form>
+    </div>
+</body>
+</html>
