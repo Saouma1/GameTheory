@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="..\..\css\header.css">
+        <link rel="stylesheet" href="..\..\css\admin.css">
+        <!---<script src="..\..\javascript\studentRetrieve.js" defer></script>--->
+        <!--<script src="..\..\javascript\createGame.js" defer></script>--> <!-- test -->
+    <iframe scrolling="no" style="border:none;" width="100%" src="..\..\HTML\header.html"></iframe>
+    <body>
+        <h1 id="studentHeader">All Students</h1>
+        <!--- TODO: make student names dynamic, pulling all student names from DB sorted in alphabetical order--->
+        <!--- TODO: make links dynamic with student names --->
+            <!--- is that possible in ColdFusion? I know it is in HTML -->
+        <div id="studentNames">
+            <table>
+                <tr>
+                    <td><a href="studentView.html?fname=Byron&lname=Bishop">Byron Bishop</a></td>
+                    <td><a href="studentView.html?fname=Miles&lname=Liebren">Miles Liebren</a></td>
+                    <td><a href="studentView.html?fname=Reece&lname=Patten">Reece Patten</a></td>
+                </tr>
+                <tr>
+                    <td><a href="studentView.html?fname=Vincent&lname=Carlson">Vincent Carlson</a></td>
+                    <td><a href="studentView.html?fname=Michael&lname=Ludwig">Michael Ludwig</a></td>
+                    <td><a href="studentView.html?fname=Christopher&lname=Polingo">Christopher Polingo</a></td>
+                </tr>
+                <tr>
+                    <td style="padding-right: 7px; padding-left: 7px"><a href="studentView.html?fname=Manuel&lname=Gutierrez Cerezo">Manuel Gutierrez Cerezo</a></td>
+                    <td style="padding-right: 7px; padding-left: 7px"><a href="studentView.html?fname=Abdulmateen&lname=Mohamed">Abdulmateen Mohamed</a></td>
+                    <td><a href="studentView.html?fname=Veronica&lname=Poquette">Veronica Poquette</a></td>
+                </tr>
+                <tr>
+                    <td><a href="studentView.html?fname=Briston&lname=Domino">Briston Domino</a></td>
+                    <td><a href="studentView.html?fname=Jade&lname=Morrison">Jade Morrison</a></td>
+                    <td><a href="studentView.html?fname=Kione&lname=Roberson">Kione Roberson</a></td>
+                </tr>
+                <tr>
+                    <td><a href="studentView.html?fname=Jack&lname=Hipsag">Jack Hipsag</a></td>
+                    <td><a href="studentView.html?fname=Zac&lname=Murphy">Zac Murphy</a></td>
+                    <td><a href="studentView.html?fname=Jad&lname=Saouma">Jad</a></td>
+                </tr>
+                <tr>
+                    <td><a href="studentView.html?fname=Jeffrey&lname=Kayfes">Jeffrey Kayfes</a></td>
+                    <td><a href="studentView.html?fname=Addison&lname=Ng">Addison Ng</a></td>
+                    <td><a href="studentView.html?fname=Hunter&lname=Seabolt">Hunter Seabolt</a></td>
+                </tr>
+                <tr>
+                    <td><a href="studentView.html?fname=Rylan&lname=Klomp">Rylan Klomp</a></td>
+                    <td><a href="studentView.html?fname=David&lname=Obst">David Obst</a></td>
+                    <td><a href="studentView.html?fname=Joe&lname=Tschida">Joe Tschida</a></td>
+                </tr>
+                <tr>
+                    <td><a href="studentView.html?fname=Max&lname=Lasitsa">Max Lasitsa</a></td>
+                    <td><a href="studentView.html?fname=Anna&lname=Olson">Anna Olson</a></td>
+                    <td><a href="studentView.html?fname=Joseph&lname=Zins">Joseph Zins</a></td>
+                </tr>
+            </table>
+        </div>
+        <br>
+        <!--table w/ links-->
+        <!-- TODO: consider making row of links an admin footer -->
+        <table id="links">
+            <tr>
+                <td>
+                    <a href="index.html">All Students</a> <!-- TODO: change link from index to all students -->
+                </td>
+                <td>
+                    <a href="index.html">Back to Home</a> <!--admin index-->
+                </td>
+                <td>
+                    <a href="index.html">All Games</a> <!-- TODO: change link from index to all games -->
+                </td>
+            </tr>
+        </table>
+    </body>
+    <!---
+    <script language="javascript">
+        window.onload = function(e){ 
+            displayInfo();
+        }
+    </script>
+    --->
+</html>
