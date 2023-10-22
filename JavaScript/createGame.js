@@ -1,5 +1,8 @@
 // create test data
 
+// https://www.section.io/engineering-education/how-to-use-localstorage-with-javascript/
+    // look into storing objects in localStorage to better transition to DB
+
 // red-black student view
 localStorage.setItem("redBlackNum", 3);  // TODO: add record count instead of static number
 localStorage.setItem("redBlackHigh", 900); // TODO: add max instead of static number

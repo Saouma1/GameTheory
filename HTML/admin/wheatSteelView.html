@@ -4,7 +4,7 @@
         <link rel="stylesheet" href="..\..\css\header.css">
         <link rel="stylesheet" href="..\..\css\gameView.css">
         <script src="..\..\javascript\gameRetrieve.js" defer></script>
-        <script src="..\..\javascript\createGame.js" defer></script> <!-- test -->
+        <!---<script src="..\..\javascript\createGame.js" defer></script>---> <!-- test -->
     <iframe scrolling="no" style="border:none;" width="100%" src="..\..\HTML\header.html"></iframe>
     <body>
         <h1 id="studentHeader_2">Game ()</h1>
@@ -19,6 +19,7 @@
             Periods: <span id="periodNum">0</span> <br> 
         </div>
         <br>
+        <!--- TODO: make team list dynamic, lead to team/pair view-->
         <div id="gameResults">
             Teams that Met Both Goals: <span id="bothGoalNames">Susan, Joe</span> <br> 
             Teams that Met One Goal: <span id="oneGoalNames">Susan, Joe</span> <br> 
@@ -48,13 +49,13 @@
         <table id="links">
             <tr>
                 <td>
-                    <a href="index.html">All Students</a> <!-- TODO: change link from index to all students -->
+                    <a href="allStudents.html">All Students</a>
                 </td>
                 <td>
                     <a href="index.html">Back to Home</a> <!--admin index-->
                 </td>
                 <td>
-                    <a href="index.html">All Games</a> <!-- TODO: change link from index to all games -->
+                    <a href="allGames.html">All Games</a>
                 </td>
             </tr>
         </table>

@@ -19,6 +19,66 @@ h1{
     position: relative;
 }
 
+#studentNames{
+    text-align: center;
+    color: #00447C;
+    font-size: 24px;
+    width: 65%;
+    position: relative;
+    margin: 0 auto;
+}
+
+#redBlackGameDates, #wheatSteelGameDates{
+    text-align: center;
+    color: #00447C;
+    font-size: 24px;
+    width: 65%;
+}
+#redBlackGameDates{
+    position: absolute;
+    left: 25%;
+}
+
+#wheatSteelGameDates{
+    position: relative;
+    left: 62.5%;
+}
+
+.gameDateCell, caption{
+    padding: 3px;
+}
+
 #userInfo{
     margin-top: 0;
+}
+
+#redBlackRounds{
+    text-align: center;
+    color: black;
+    font-size: 24px;
+    width: 35%;
+    position: relative;
+    margin: 0 auto;
+    font-weight: bold;
+}
+
+.tableHeader{
+    color:#FFCB00;
+    background-color:#00447C;
+    font-weight:bold;
+}
+
+.card, .point{
+    width: 100px;
+}
+
+.roundCol{
+    color:#FFCB00;
+    background-color:#00447C;
+    font-weight:bold;
+    width: 50px;
+}
+
+#playerOneName, #playerTwoName, #headerPlayerOne, #headerPlayerTwo{
+    text-transform: capitalize;
 }
