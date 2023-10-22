@@ -51,3 +51,17 @@ h1{
 #userInfo{
     margin-top: 0;
 }
+
+#redBlackRounds{
+    text-align: center;
+    color: black;
+    font-size: 24px;
+    width: 23%;
+    position: relative;
+    margin: 0 auto;
+}
+
+.tableHeader{
+    color:#FFCB00;
+    background-color:#00447C;
+}

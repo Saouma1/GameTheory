@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="..\..\css\header.css">
+        <link rel="stylesheet" href="..\..\css\admin.css">
+        <script src="..\..\javascript\teamRetrieve.js" defer></script>
+        <!--<script src="..\..\javascript\createGame.js" defer></script>--> <!-- test -->
+    <iframe scrolling="no" style="border:none;" width="100%" src="..\..\HTML\header.html"></iframe>
+    <body>
+        <h1 id="studentHeader">Pair (<span id="headerPlayerOne">Susan</span> & <span id="headerPlayerTwo">Bob</span>)</h1>
+        <div id ="userInfo">
+            Game Name: <span id="gameName_1">{Game Name}</span> <br>
+            Game Date: <span id="gameDate_1">{Game Date}</span> <br>
+            Pair: <span id="playerOneName">Susan</span> & <span id="playerTwoName">Bob</span> <br>
+        </div>
+        <br>
+        <div id ="redBlackRounds"> <!---8 rounds--->
+            <table>
+                <tr>
+                    <th class="tableHeader">#</th>
+                    <th id="tablePlayerOneCard" class="tableHeader">Susan</th>
+                    <th id="tablePlayerTwoCard" class="tableHeader">Bob</th>
+                    <th id="tablePlayerOnePoints" class="tableHeader">Susan</th>
+                    <th id="tablePlayerTwoPoints" class="tableHeader">Bob</th>
+                </tr>
+                <!---TODO: make table cells dynamic (except round numbers) --->
+                <tr>
+                    <td class="tableHeader">1</td>
+                    <td id="roundOnePlayerOneCard" class="card">R</td>
+                    <td id="roundOnePlayerTwoCard" class="card">B</td>
+                    <td id="roundOnePlayerOnePoints">200</td>
+                    <td id="roundOnePlayerTwoPoints">0</td>
+                </tr>
+                <tr>
+                    <td class="tableHeader">2</td>
+                    <td id="roundTwoPlayerOneCard" class="card">R</td>
+                    <td id="roundTwoPlayerTwoCard" class="card">B</td>
+                    <td id="roundTwoPlayerOnePoints">400</td>
+                    <td id="roundTwoPlayerTwoPoints">0</td>
+                </tr>
+                <tr>
+                    <td class="tableHeader">3</td>
+                    <td id="roundThreePlayerOneCard" class="card">R</td>
+                    <td id="roundThreePlayerTwoCard" class="card">B</td>
+                    <td id="roundThreePlayerOnePoints">600</td>
+                    <td id="roundThreePlayerTwoPoints">0</td>
+                </tr>
+                <tr>
+                    <td class="tableHeader">4</td>
+                    <td id="roundFourPlayerOneCard" class="card">R</td>
+                    <td id="roundFourPlayerTwoCard" class="card">B</td>
+                    <td id="roundFourPlayerOnePoints">800</td>
+                    <td id="roundFourPlayerTwoPoints">0</td>
+                </tr>
+                <tr>
+                    <td class="tableHeader">5</td>
+                    <td id="roundFivePlayerOneCard" class="card">R</td>
+                    <td id="roundFivePlayerTwoCard" class="card">B</td>
+                    <td id="roundFivePlayerOnePoints">1000</td>
+                    <td id="roundFivePlayerTwoPoints">0</td>
+                </tr>
+                <tr>
+                    <td class="tableHeader">6</td>
+                    <td id="roundSixPlayerOneCard" class="card">R</td>
+                    <td id="roundSixPlayerTwoCard" class="card">B</td>
+                    <td id="roundSixPlayerOnePoints">1200</td>
+                    <td id="roundSixPlayerTwoPoints">0</td>
+                </tr>
+                <tr>
+                    <td class="tableHeader">7</td>
+                    <td id="roundSevenPlayerOneCard" class="card">R</td>
+                    <td id="roundSevenPlayerTwoCard" class="card">B</td>
+                    <td id="roundSevenPlayerOnePoints">1400</td>
+                    <td id="roundSevenPlayerTwoPoints">0</td>
+                </tr>
+                <tr>
+                    <td class="tableHeader">8</td>
+                    <td id="roundEightPlayerOneCard" class="card">B</td>
+                    <td id="roundEightlayerTwoCard" class="card">R</td>
+                    <td id="roundEightPlayerOnePoints">1400</td>
+                    <td id="roundEightPlayerTwoPoints">200</td>
+                </tr>
+            </table>
+        </div>
+        <br>
+        <!--table w/ links-->
+        <!-- TODO: consider making row of links an admin footer -->
+        <table id="links">
+            <tr>
+                <td>
+                    <a href="allStudents.html">All Students</a>
+                </td>
+                <td>
+                    <a href="index.html">Back to Home</a> <!--admin index-->
+                </td>
+                <td>
+                    <a href="allGames.html">All Games</a>
+                </td>
+            </tr>
+        </table>
+    </body>
+    <script language="javascript">
+        window.onload = function(e){ 
+            displayInfo();
+        }
+    </script>
+</html>
