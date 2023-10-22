@@ -56,12 +56,29 @@ h1{
     text-align: center;
     color: black;
     font-size: 24px;
-    width: 23%;
+    width: 35%;
     position: relative;
     margin: 0 auto;
+    font-weight: bold;
 }
 
 .tableHeader{
     color:#FFCB00;
     background-color:#00447C;
+    font-weight:bold;
+}
+
+.card, .point{
+    width: 100px;
+}
+
+.roundCol{
+    color:#FFCB00;
+    background-color:#00447C;
+    font-weight:bold;
+    width: 50px;
+}
+
+#playerOneName, #playerTwoName, #headerPlayerOne, #headerPlayerTwo{
+    text-transform: capitalize;
 }
