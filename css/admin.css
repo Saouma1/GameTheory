@@ -28,6 +28,26 @@ h1{
     margin: 0 auto;
 }
 
+#redBlackGameDates, #wheatSteelGameDates{
+    text-align: center;
+    color: #00447C;
+    font-size: 24px;
+    width: 65%;
+}
+#redBlackGameDates{
+    position: absolute;
+    left: 25%;
+}
+
+#wheatSteelGameDates{
+    position: relative;
+    left: 62.5%;
+}
+
+.gameDateCell, caption{
+    padding: 3px;
+}
+
 #userInfo{
     margin-top: 0;
 }

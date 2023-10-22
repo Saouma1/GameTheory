@@ -2,7 +2,8 @@
 
 function displayInfoRedBlack(){
     let gameName1 = localStorage.getItem("gameName_1");
-    let gameDate1 = localStorage.getItem("gameDate_1");
+    //let gameDate1 = localStorage.getItem("gameDate_1");
+        // use URL to grab date + use it to search storage
     let playerNum1 = localStorage.getItem("playerNum_1");
     let pairNum1 = localStorage.getItem("pairNum_1");
     let roundNum1 = localStorage.getItem("roundNum_1");
@@ -26,9 +27,14 @@ function displayInfoRedBlack(){
     let lowestRedName = localStorage.getItem("lowestRedName");
     let lowestRedScore = localStorage.getItem("lowestRedScore");
 
+    let urlFull = window.location.href; // full url
+    // isolate end of url, which contains date info
+    let dateIndex = urlFull.search("date="); // index of how much to cut off from front
+    let urlDate = urlFull.slice(dateIndex + 5); // slice out dateIndex variable, adding length of "date="
+
     document.getElementById('studentHeader_1').innerHTML = "Game (" + gameName1 + ")";
     document.getElementById('gameName_1').innerHTML = gameName1;
-    document.getElementById('gameDate_1').innerHTML = gameDate1;
+    document.getElementById('gameDate_1').innerHTML = urlDate;
     document.getElementById('playerNum_1').innerHTML = playerNum1;
     document.getElementById('pairNum_1').innerHTML = pairNum1;
     document.getElementById('roundNum_1').innerHTML = roundNum1;
@@ -54,7 +60,8 @@ function displayInfoRedBlack(){
 }
 function displayInfoWheatSteel(){
     let gameName2 = localStorage.getItem("gameName_2");
-    let gameDate2 = localStorage.getItem("gameDate_2");
+    //let gameDate2 = localStorage.getItem("gameDate_2");
+        // use URL to grab date + use it to search storage
     let playerNum2 = localStorage.getItem("playerNum_2");
     let teamsFour = localStorage.getItem("teamsFour");
     let periodNum = localStorage.getItem("periodNum");
@@ -94,9 +101,14 @@ function displayInfoWheatSteel(){
     let steelTradeTotal = localStorage.getItem("steelTradeTotal");
     let steelTradeAverage = localStorage.getItem("steelTradeAverage");
 
+    let urlFull = window.location.href; // full url
+    // isolate end of url, which contains date info
+    let dateIndex = urlFull.search("date="); // index of how much to cut off from front
+    let urlDate = urlFull.slice(dateIndex + 5); // slice out dateIndex variable, adding length of "date="
+
     document.getElementById('studentHeader_2').innerHTML = "Game (" + gameName2 + ")";
     document.getElementById('gameName_2').innerHTML = gameName2;
-    document.getElementById('gameDate_2').innerHTML = gameDate2;
+    document.getElementById('gameDate_2').innerHTML = urlDate;
     document.getElementById('playerNum_2').innerHTML = playerNum2;
     document.getElementById('teamsFour').innerHTML = teamsFour;
     document.getElementById('periodNum').innerHTML = periodNum;

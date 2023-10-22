@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="..\..\css\header.css">
+        <link rel="stylesheet" href="..\..\css\admin.css">
+        <!---<script src="..\..\javascript\studentRetrieve.js" defer></script>--->
+        <!--<script src="..\..\javascript\createGame.js" defer></script>--> <!-- test -->
+    <iframe scrolling="no" style="border:none;" width="100%" src="..\..\HTML\header.html"></iframe>
+    <body>
+        <h1 id="gameHeader">All Games</h1>
+        <!--- TODO: make game date links dynamic, pulling all game dates from DB sorted in chronological order--->
+        <!--- TODO: make links dynamic with game dates --->
+            <!--- is that possible in ColdFusion? I know it is in HTML -->
+        <div id="redBlackGameDates">
+            <table style="width: 50">
+                <caption style="font-size: 18px"><strong>Red Card Black Card</strong></caption>
+                <!--- make sure date in links matches DB format--->
+                <tr>
+                    <td class="gameDateCell"><a href="redBlackView.html?date=3-17-23">3-17-23</a></td>
+                    <td class="gameDateCell"><a href="redBlackView.html?date=5-5-23">5-5-23</a></td>
+                </tr>
+                <tr>
+                    <td class="gameDateCell"><a href="redBlackView.html?date=3-24-23">3-24-23</a></td>
+                    <td class="gameDateCell"><a href="redBlackView.html?date=9-8-23">9-8-23</a></td>
+                </tr>
+                <tr>
+                    <td class="gameDateCell"><a href="redBlackView.html?date=3-31-23">3-31-23</a></td>
+                    <td class="gameDateCell"><a href="redBlackView.html?date=9-15-23">9-15-23</a></td>
+                </tr>
+                <tr>
+                    <td class="gameDateCell"><a href="redBlackView.html?date=4-7-23">4-7-23</a></td>
+                    <td class="gameDateCell"><a href="redBlackView.html?date=9-22-23">9-22-23</a></td>
+                </tr>
+                <tr>
+                    <td class="gameDateCell"><a href="redBlackView.html?date=4-14-23">4-14-23</a></td>
+                    <td class="gameDateCell"><a href="redBlackView.html?date=9-29-23">9-29-23</a></td>
+                </tr>
+                <tr>
+                    <td class="gameDateCell"><a href="redBlackView.html?date=4-21-23">4-21-23</a></td>
+                    <td class="gameDateCell"><a href="redBlackView.html?date=10-6-23">10-6-23</a></td>
+                </tr>
+                <tr>
+                    <td class="gameDateCell"><a href="redBlackView.html?date=4-28-23">4-28-23</a></td>
+                    <td class="gameDateCell"><a href="redBlackView.html?date=10-13-23">10-13-23</a></td>
+                </tr>
+            </table>
+        </div>
+        <div id="wheatSteelGameDates">
+            <table>
+                <caption style="font-size: 18px"><strong>Wheat & Steel</strong></caption>
+                <!--- make sure date in links matches DB format--->
+                <tr>
+                    <td class="gameDateCell"><a href="wheatSteelView.html?date=3-13-23">3-13-23</a></td>
+                    <td class="gameDateCell"><a href="wheatSteelView.html?date=5-1-23">5-1-23</a></td>
+                </tr>
+                <tr>
+                    <td class="gameDateCell"><a href="wheatSteelView.html?date=3-20-23">3-20-23</a></td>
+                    <td class="gameDateCell"><a href="wheatSteelView.html?date=9-11-23">9-11-23</a></td>
+                </tr>
+                <tr>
+                    <td class="gameDateCell"><a href="wheatSteelView.html?date=3-27-23">3-27-23</a></td>
+                    <td class="gameDateCell"><a href="wheatSteelView.html?date=9-18-23">9-18-23</a></td>
+                </tr>
+                <tr>
+                    <td class="gameDateCell"><a href="wheatSteelView.html?date=4-3-23">4-3-23</a></td>
+                    <td class="gameDateCell"><a href="wheatSteelView.html?date=9-25-23">9-25-23</a></td>
+                </tr>
+                <tr>
+                    <td class="gameDateCell"><a href="wheatSteelView.html?date=4-10-23">4-10-23</a></td>
+                    <td class="gameDateCell"><a href="wheatSteelView.html?date=10-2-23">10-2-23</a></td>
+                </tr>
+                <tr>
+                    <td class="gameDateCell"><a href="wheatSteelView.html?date=4-17-23">4-17-23</a></td>
+                    <td class="gameDateCell"><a href="wheatSteelView.html?date=10-9-23">10-9-23</a></td>
+                </tr>
+                <tr>
+                    <td class="gameDateCell"><a href="redBlackView.html?date=4-24-23">4-24-23</a></td>
+                    <td class="gameDateCell"><a href="redBlackView.html?date=10-16-23">10-16-23</a></td>
+                </tr>
+            </table>
+        </div>
+        <br>
+        <!--table w/ links-->
+        <!-- TODO: consider making row of links an admin footer -->
+        <table id="links">
+            <tr>
+                <td>
+                    <a href="allStudents.html">All Students</a>
+                </td>
+                <td>
+                    <a href="index.html">Back to Home</a> <!--admin index-->
+                </td>
+                <td>
+                    <a href="allGames.html">All Games</a>
+                </td>
+            </tr>
+        </table>
+    </body>
+    <!---
+    <script language="javascript">
+        window.onload = function(e){ 
+            displayInfo();
+        }
+    </script>
+    --->
+</html>
