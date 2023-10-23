@@ -26,7 +26,11 @@ function displayInfo(){
     //p1Name = p1Name.charAt(0).toUpperCase() + p1Name.substr(1).toLowerCase();
     document.getElementById('playerOneName').innerHTML = p1Name;
     document.getElementById('headerPlayerOne').innerHTML = p1Name;
+    document.getElementById('tablePlayerOneCard').innerHTML = p1Name;
+    document.getElementById('tablePlayerOnePoints').innerHTML = p1Name;
     document.getElementById('playerTwoName').innerHTML = p2Name;
     document.getElementById('headerPlayerTwo').innerHTML = p2Name;
+    document.getElementById('tablePlayerTwoCard').innerHTML = p2Name;
+    document.getElementById('tablePlayerTwoPoints').innerHTML = p2Name;
     document.getElementById('gameDate').innerHTML = gameDate;
 }

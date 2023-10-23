@@ -1,7 +1,7 @@
 // use ID in DB
 
 function displayInfoRedBlack(){
-    let gameName1 = localStorage.getItem("gameName_1");
+    //let gameName1 = localStorage.getItem("gameName_1");
     //let gameDate1 = localStorage.getItem("gameDate_1");
         // use URL to grab date + use it to search storage
     let playerNum1 = localStorage.getItem("playerNum_1");
@@ -32,8 +32,8 @@ function displayInfoRedBlack(){
     let dateIndex = urlFull.search("date="); // index of how much to cut off from front
     let urlDate = urlFull.slice(dateIndex + 5); // slice out dateIndex variable, adding length of "date="
 
-    document.getElementById('studentHeader_1').innerHTML = "Game (" + gameName1 + ")";
-    document.getElementById('gameName_1').innerHTML = gameName1;
+   // document.getElementById('studentHeader_1').innerHTML = "Game (" + gameName1 + ")";
+    //document.getElementById('gameName_1').innerHTML = gameName1;
     document.getElementById('gameDate_1').innerHTML = urlDate;
     document.getElementById('playerNum_1').innerHTML = playerNum1;
     document.getElementById('pairNum_1').innerHTML = pairNum1;
@@ -57,6 +57,25 @@ function displayInfoRedBlack(){
     document.getElementById('highestRedScore').innerHTML = highestRedScore;
     document.getElementById('lowestRedName').innerHTML = lowestRedName;
     document.getElementById('lowestRedScore').innerHTML = lowestRedScore;
+
+    // use date grabbed from url and add it to pair links
+    let allLinks = document.getElementsByTagName("a");
+    for (link in allLinks){
+        let targetLink = allLinks[link].href
+        // check if link leads to redBlackPairView and only edit it if true
+        if (typeof targetLink !== 'undefined' && targetLink.search("redBlackPairView.html") > 0){
+            let insertIndex = targetLink.search("d="); // index of how much to cut off from front
+            let insertString = targetLink.slice(insertIndex + 2); // slice out dateIndex variable, adding length of "d="
+            let preData = targetLink.substring(0, insertIndex); // with date
+            let insertIndexEnd = insertString.search("&");
+            insertString = insertString.slice(insertIndexEnd + 1); // without date
+            // insert new date where old date was
+            insertString = urlDate + "&" + insertString;
+            let linkNew = preData + "d=" + insertString;
+            // now replace link
+            allLinks[link].href = linkNew;
+        }
+    }
 }
 function displayInfoWheatSteel(){
     let gameName2 = localStorage.getItem("gameName_2");
