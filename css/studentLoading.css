@@ -1,0 +1,27 @@
+/* Loading screen styles */
+.loader-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+  }
+  
+body{
+  overflow: hidden;
+}
+
+  .loader {
+    font-size: 600px; /* 4 times bigger than the original size */
+    color: #3498db; /* Set your desired color */
+    margin-bottom: 20px; /* Adjust as needed */
+  }
+  
+  /* Additional styles for the text at the top of the screen */
+  .heading {
+    font-size: 50px;
+    text-align: center;
+    color: #FFCB00;
+    margin-top: 20px;
+  }

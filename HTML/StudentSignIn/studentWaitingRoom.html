@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centered Usernames</title>
+    <link rel="stylesheet" type="text/css" href="../../css/studentWaitingRoom.css">
+    <style>
+        .usernames-container {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            height: 80vh;
+            flex-direction: row;
+        }
+
+        .column {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .username {
+            margin: 10px;
+            color: black;
+            font-size: 24px;
+            font-family: Roboto;
+            font-weight: 400;
+            text-align: center;
+        }
+
+        .header {
+            text-align: center;
+            color: #00447C;
+            font-size: 40px;
+            font-family: 'Roboto Condensed', sans-serif;
+            font-weight: 400;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <iframe scrolling="no" style="border:none; height: 100px; width: 100%;" src="..\header.html"></iframe>
+    <div style="display: flex; justify-content: center; align-items: center; height: 20vh;">
+        <div class="header">Students in Room</div>
+    </div>
+    <div class="usernames-container">
+        <div class="column">
+            <div class="username">{Username1}</div>
+            <div class="username">{Username2}</div>
+            <div class="username">{Username3}</div>
+            <div class="username">{Username4}</div>
+            <div class="username">{Username5}</div>
+            <div class="username">{Username6}</div>
+            <div class="username">{Username7}</div>
+        </div>
+        <div class="column">
+            <div class="username">{Username8}</div>
+            <div class="username">{Username9}</div>
+            <div class="username">{Username10}</div>
+            <div class="username">{Username11}</div>
+            <div class="username">{Username12}</div>
+            <div class="username">{Username13}</div>
+            <div class="username">{Username14}</div>
+        </div>
+        <div class="column">
+            <div class="username">{Username15}</div>
+            <div class="username">{Username16}</div>
+            <div class="username">{Username17}</div>
+            <div class="username">{Username18}</div>
+            <div class="username">{Username19}</div>
+            <div class="username">{Username20}</div>
+        </div>
+    </div>
+</body>
+</html>

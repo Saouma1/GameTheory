@@ -1,0 +1,18 @@
+/* CSS File for Username Centering and Color Change */
+
+/* Centering the usernames */
+div[style*="text-align: center; color: black; font-size: 24px; font-family: Roboto; font-weight: 400;"] {
+    left: 80%;
+    transform: translateX(-50%);
+  }
+
+  /* Hide the scrollbar */
+  body{
+    overflow: hidden;
+      }  
+
+
+  /* Change the color of the usernames if necessary */
+  .username {
+    color: black; /* Default color */
+  }
