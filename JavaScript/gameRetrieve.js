@@ -149,4 +149,87 @@ function displayInfoWheatSteel(){
     document.getElementById('steelConsumeAverage').innerHTML = steelConsumeAverage;
     document.getElementById('steelTradeTotal').innerHTML = steelTradeTotal;
     document.getElementById('steelTradeAverage').innerHTML = steelTradeAverage;
+
+    // now make team links dynamic
+    // adding ending character to each list of names
+        // make sure that team names do not have special characters
+    let bothSpan = document.getElementById("bothGoalNames").innerHTML + ".";
+    let oneSpan = document.getElementById("oneGoalNames").innerHTML + ".";
+    let noSpan = document.getElementById("noGoalNames").innerHTML + ".";
+
+    let teamsBoth = [];
+    let teamsOne = [];
+    let teamsNone = [];
+
+    // create array of teams for each of the three category
+    let teamNameFull = "";
+    for (teamName in bothSpan){
+        // have to split looking for ", " into two tied expressions
+        if (bothSpan[teamName] != ","  && bothSpan[teamName] != "."){
+            teamNameFull = teamNameFull + bothSpan[teamName];
+        }
+        else{
+            teamsBoth.push(teamNameFull);
+            teamNameFull = ""; // reset string
+        } 
+    }
+    // grab date, team name from URL using urlFull strat
+    for (team in teamsBoth){
+        if (team < 1){
+            teamsBoth[team] = "<a href='wheatSteelTeamView.html?date=" + urlDate + "&t="+teamsBoth[team].toString()+"'>" + teamsBoth[team] + "</a>";
+            // see if toString is necessary
+        }
+        else{
+            // remove space from team name for processing
+            teamsBoth[team] = teamsBoth[team].substring(1);
+            // add space before link for display
+            teamsBoth[team] = " <a href='wheatSteelTeamView.html?date=" + urlDate + "&t="+teamsBoth[team].toString() + "'>" + teamsBoth[team] + "</a>";
+        }
+    }
+    // set the span.innerHTML to array
+    document.getElementById("bothGoalNames").innerHTML = teamsBoth;
+
+    for (teamName in oneSpan){
+        if (oneSpan[teamName] != ","  && oneSpan[teamName] != "."){
+            teamNameFull = teamNameFull + oneSpan[teamName];
+        }
+        else{
+            teamsOne.push(teamNameFull);
+            teamNameFull = ""; // reset string
+        } 
+    }
+    for (team in teamsOne){
+        if (team < 1){
+            teamsOne[team] = "<a href='wheatSteelTeamView.html?date=" + urlDate + "&t="+teamsOne[team].toString()+"'>" + teamsOne[team] + "</a>";
+        }
+        else{
+            // remove space from team name for processing
+            teamsOne[team] = teamsOne[team].substring(1);
+            // add space before link for display
+            teamsOne[team] = " <a href='wheatSteelTeamView.html?date=" + urlDate + "&t="+teamsOne[team].toString() + "'>" + teamsOne[team] + "</a>";
+        }
+    }
+    document.getElementById("oneGoalNames").innerHTML = teamsOne;
+
+    for (teamName in noSpan){
+        if (noSpan[teamName] != ","  && noSpan[teamName] != "."){
+            teamNameFull = teamNameFull + noSpan[teamName];
+        }
+        else{
+            teamsNone.push(teamNameFull);
+            teamNameFull = ""; // reset string
+        } 
+    }
+    for (team in teamsNone){
+        if (team < 1){
+            teamsNone[team] = "<a href='wheatSteelTeamView.html?date=" + urlDate + "&t="+teamsNone[team].toString()+"'>" + teamsNone[team] + "</a>";
+        }
+        else{
+            // remove space from team name for processing
+            teamsNone[team] = teamsNone[team].substring(1);
+            // add space before link for display
+            teamsNone[team] = " <a href='wheatSteelTeamView.html?date=" + urlDate + "&t=" + teamsNone[team].toString() + "'>" + teamsNone[team] + "</a>";
+        }
+    }
+    document.getElementById("noGoalNames").innerHTML = teamsNone;
 }

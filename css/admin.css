@@ -79,7 +79,7 @@ h1{
 }
 
 .card, .point, .roundHeader{
-    width: 100px;
+    width: 120px;
 }
 
 .roundCol, .resourceCol{
@@ -103,4 +103,9 @@ h1{
 
 #playerOneName, #playerTwoName, #headerPlayerOne, #headerPlayerTwo, #tablePlayerOneCard, #tablePlayerTwoCard, #tablePlayerOnePoints, #tablePlayerTwoPoints{
     text-transform: capitalize;
+}
+
+.blueBack{
+    background-color:#00447C;
+    color: white;
 }

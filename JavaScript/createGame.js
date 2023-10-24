@@ -67,3 +67,40 @@ localStorage.setItem("steelConsumeTotal", 1849);
 localStorage.setItem("steelConsumeAverage", 369.8);
 localStorage.setItem("steelTradeTotal", 613);
 localStorage.setItem("steelTradeAverage", 122.6);
+
+// game info
+localStorage.setItem("roundOneWheat", 0);
+localStorage.setItem("roundTwoWheat", 0);
+localStorage.setItem("roundThreeWheat", 0);
+localStorage.setItem("roundFourWheat", 0);
+localStorage.setItem("roundFiveWheat", 0);
+
+localStorage.setItem("roundOneSteel", 150);
+localStorage.setItem("roundTwoSteel", 150);
+localStorage.setItem("roundThreeSteel", 150);
+localStorage.setItem("roundFourSteel", 150);
+localStorage.setItem("roundFiveSteel", 150);
+
+localStorage.setItem("roundOneWheatTrade", "-");
+localStorage.setItem("roundTwoWheatTrade", 0);
+localStorage.setItem("roundThreeWheatTrade", 0);
+localStorage.setItem("roundFourWheatTrade", "+100");
+localStorage.setItem("roundFiveWheatTrade", "+100");
+
+localStorage.setItem("roundOneSteelTrade", "-");
+localStorage.setItem("roundTwoSteelTrade", 0);
+localStorage.setItem("roundThreeSteelTrade", 0);
+localStorage.setItem("roundFourSteelTrade", "-150");
+localStorage.setItem("roundFiveSteelTrade", "-150");
+
+localStorage.setItem("roundOneWheatConsume", 0);
+localStorage.setItem("roundTwoWheatConsume", 0);
+localStorage.setItem("roundThreeWheatConsume", 0);
+localStorage.setItem("roundFourWheatConsume", 100);
+localStorage.setItem("roundFiveWheatConsume", 100);
+
+localStorage.setItem("roundOneSteelConsume", 150);
+localStorage.setItem("roundTwoSteelConsume", 150);
+localStorage.setItem("roundThreeSteelConsume", 150);
+localStorage.setItem("roundFourSteelConsume", 0);
+localStorage.setItem("roundFiveSteelConsume", 0);
