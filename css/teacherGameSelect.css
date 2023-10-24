@@ -1,106 +1,28 @@
-/* Style for the "Select Game" */
-
-/* Adjusted styles for the boxes */
-.box-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 70vh; /* Adjust the height as needed */
-    margin-top: 50px; /* Adjust the margin-top value as needed */
-}
-
-.box {
-    width: 500px; /* Adjust the width as needed */
-    height: 600px; /* Adjust the height as needed */
-    background: white;
-    border: 2px #00447C solid;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
 .select-game {
-    color: #00447C;
-    font-size: 40px;
-    font-family: 'Roboto Condensed', sans-serif;
-    font-weight: 400;
-    word-wrap: break-word;
+    font-size: 24px;
+    margin-bottom: 20px;
 }
 
-/* Style for "Wheat" */
-.wheat {
-    color: #FFCB00;
-    font-size: 64px;
-    font-family: 'Crimson Pro', sans-serif;
-    font-weight: 400;
-    word-wrap: break-word;
+.button-container {
+    position: relative;
 }
 
-/* Style for "&" */
-.and-symbol {
-    color: black;
-    font-size: 64px;
-    font-family: 'Crimson Pro', sans-serif;
-    font-weight: 400;
-    word-wrap: break-word;
+.game-button {
+    padding: 10px 20px;
+    margin: 5px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 200px;
+    height: 50px;
+    font-size: 16px;
 }
 
-/* Style for "Steel" */
-.steel {
-    color: #ABAAAA;
-    font-size: 64px;
-    font-family: 'Crimson Pro', sans-serif;
-    font-weight: 400;
-    word-wrap: break-word;
+.blue-button {
+    background-color: royalblue;
 }
 
-/* Style for "Red Card" */
-.red-card {
-    color: #FF0000;
-    font-size: 64px;
-    font-family: 'Crimson Pro', sans-serif;
-    font-weight: 400;
-    word-wrap: break-word;
-}
-
-/* Style for "Black Card" */
-.black-card {
-    color: black;
-    font-size: 64px;
-    font-family: 'Crimson Pro', sans-serif;
-    font-weight: 400;
-    word-wrap: break-word;
-}
-
-/* Style for "Sign Out" */
-.sign-out {
-    color: #00447C;
-    font-size: 20px;
-    font-family: 'Roboto Condensed', sans-serif;
-    font-weight: 700;
-    text-decoration: underline;
-    line-height: 32px;
-    word-wrap: break-word;
-}
-
-/* Style for "Create New Session" */
-.create-session {
-    color: #00447C;
-    font-size: 20px;
-    font-family: 'Roboto Condensed', sans-serif;
-    font-weight: 700;
-    text-decoration: underline;
-    line-height: 32px;
-    word-wrap: break-word;
-}
-
-/* Style for "Home" */
-.home {
-    color: #00447C;
-    font-size: 20px;
-    font-family: 'Roboto Condensed', sans-serif;
-    font-weight: 700;
-    text-decoration: underline;
-    line-height: 32px;
-    word-wrap: break-word;
+.gold-button {
+    background-color: gold;
 }

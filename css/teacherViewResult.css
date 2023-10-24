@@ -1,0 +1,68 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+/* Hide the scrollbar */
+body{
+    overflow: hidden;
+} 
+
+#container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.box1 {
+    width: 685px;
+    height: 492px;
+    background: white;
+    margin: 0 auto;
+}
+
+.box2 {
+    width: 486.23px;
+    margin: 10px auto; /* Adjusted margin to create more space */
+    color: #00447C;
+    font-size: 40px; /* Adjusted font size */
+    font-family: Roboto Condensed;
+    font-weight: 400;
+    word-wrap: break-word;
+    line-height: 1.5;
+}
+
+.box3 {
+    width: 685px;
+    height: 52.72px;
+    position: relative;
+    background: #FAFAFA;
+    margin: 10px auto; /* Adjusted margin to create more space */
+}
+
+.box4 {
+    width: 261.47px;
+    height: 45.89px;
+    margin: 30px auto; 
+    color: black;
+    font-size: 20px; /* Adjusted font size */
+    font-family: Roboto;
+    font-weight: 400;
+    word-wrap: break-word;
+    line-height: 1.5;
+}
+
+.box5 {
+    color: black;
+    font-size: 14px; /* Adjusted font size */
+    font-family: Roboto;
+    font-weight: 400;
+    word-wrap: break-word;
+    margin: 10px auto; /* Adjusted margin to create more space */
+    line-height: 1.5;
+}

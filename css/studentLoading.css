@@ -18,6 +18,15 @@ body{
     margin-bottom: 20px; /* Adjust as needed */
   }
   
+  .loader-container .loading-message {
+    color: white;
+    font-size: 50px; /* Increase the font size here */
+    margin-bottom: 20px;
+    text-transform: none;
+  }
+
+
+
   /* Additional styles for the text at the top of the screen */
   .heading {
     font-size: 50px;
