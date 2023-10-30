@@ -28,16 +28,11 @@ STUDENTSIGNON
             <h1 id="signInHeader">
                 Sign In
             </h1>
-            <form method="POST" action="../admin/teacherSelectGame.html">
+            <form method="GET" action="studentWaitingRoom.html">
                 <div id="studentUsername">
                     <label for="Email" name="emailLabel" id="email">&nbsp;&nbsp;Email</label>
                     &nbsp;
                     <input name="Email" id="Email" required>
-                </div>
-                <div id="studentPassword">
-                    <label for="password" name="passwordLabel" id="passwordLabel">&nbsp;&nbsp;Password</label>
-                    &nbsp; &nbsp;
-                    <input name="password" id="password" required>
                 </div>
                 <input type="submit" name="signOnsubmit" id="signOnsubmit" value="Submit" onclick="return submitForm()">
             </form>

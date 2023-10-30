@@ -11,13 +11,19 @@
 
 <body>
     <div class="container">
-        <div class="background"></div>
-        <div class="signin">Sign In</div>
-        <div class="username-label">Username</div>
-        <input type="text" class="username-input" />
-        <div class="password-label">Password</div>
-        <input type="password" class="password-input" />
-        <div class="menu">
+        <form method="GET" action="../admin/teacherSelectGame.html">
+            <div id="studentUsername">
+                <label for="Email" name="emailLabel" id="email">&nbsp;&nbsp;Email</label>
+                &nbsp;
+                <input name="Email" id="Email" required>
+            </div>
+            <div id="studentPassword">
+                <label for="password" name="passwordLabel" id="passwordLabel">&nbsp;&nbsp;Password</label>
+                &nbsp; &nbsp;
+                <input name="password" id="password" required>
+            </div>
+            <input type="submit" name="signOnsubmit" id="signOnsubmit" value="Submit" onclick="return submitForm()">
+        </form><div class="menu">
             <a href="teacherCreateProfile.html">  <!-- Added anchor tag here -->
                 <div class="home">Create a profile</div>
             </a>  <!-- Closing anchor tag -->
