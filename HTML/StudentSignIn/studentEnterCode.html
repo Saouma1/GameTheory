@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="..\..\css\student.css">
+        <script src="..\..\javascript\createGame.js" defer></script> <!---makes sure the values are in localStorage--->
+    <iframe scrolling="no" style="border:none;" width="100%" src="..\..\HTML\header.html"></iframe>
+    <body>
+        <h1 id="gameHeader">Enter Code to Join Game Room</h1>
+        <h2 id="gameName">{Game Name}</h2> <!---  color: #00447C; --->
+        <div id ="codeInput"> <!--- form --->
+            <input type="text" maxlength="6" size="12" id="gameCode" name="gameCode" style="letter-spacing: 0.65em; font-size: 24px; height: 108px; text-transform:uppercase"> 
+            <br>
+            <span id="codeDashes" style="font-size: 24px;"><strong>__ __ __ __ __ __</strong></span> <br>
+            <input type="button" value="Submit" style="background-color: #00447C; color:#FFD400">
+        </div>
+        <!---
+        <div style="width: 347px; height: 90px; left: 15px; top: 9px; position: absolute; text-align: center; color: black; font-size: 48px; font-family: Roboto; font-weight: 400; word-wrap: break-word">__ __ __ __ __ __</div>
+        --->
+    </body>
+</html>
