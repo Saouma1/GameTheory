@@ -12,13 +12,56 @@ h1{
     padding-bottom: 5px;
     position: absolute;
     top: 90px;
+    font-size: 36px;
 }
 h2{
     text-align: center;
-    color: #00447C; /* CSS Blue */
+    color: black;
     width: 100%;
     margin-top: 0px;
     padding-bottom: 5px;
     position: absolute;
     top: 140px;
+    font-size: 32px;
+}
+#codeInput{
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    top: 200px;
+    color:#00447C;
+}
+#codeSubmit{
+    background-color: #00447C;
+    color: #FFCB00; 
+    font-size: 24px;
+    font-weight: 600;
+    border-radius: 15px;
+    width: 120px; 
+    height: 50px; 
+}
+#gameCode{
+    text-align: center;
+    letter-spacing: 0.65em; 
+    font-size: 24px; 
+    height: 108px; 
+    width: 25%;
+    text-transform: uppercase;
+    border-width: 5px;
+    border-style: solid;
+    border-color: black;
+    /*
+    background: 
+    repeating-linear-gradient(90deg, 
+        #00447C 0, 
+        #00447C 0.65em) 
+      0 100%/100% 2px no-repeat;
+      */
+}
+#codeDashes{
+    text-align: center;
+    letter-spacing: 0.46em; 
+    font-size: 32px; 
+    margin: 0 auto;
+    font-weight: 600;
 }
