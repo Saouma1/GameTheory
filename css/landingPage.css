@@ -1,0 +1,26 @@
+body{
+    font-family: Arial;
+    height: fit-content;
+    width: 100%;
+    margin-top: 0px;
+}
+h1{
+    text-align: center;
+    color: #00447C; /* CSS Blue */
+    width: 100%;
+    margin-top: 0px;
+    padding-bottom: 5px;
+    position: absolute;
+    top: 90px;
+    font-size: 36px;
+}
+h2{
+    text-align: center;
+    color: black;
+    width: 100%;
+    margin-top: 0px;
+    padding-bottom: 5px;
+    position: absolute;
+    top: 140px;
+    font-size: 32px;
+}
