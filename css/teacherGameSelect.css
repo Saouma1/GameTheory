@@ -5,24 +5,20 @@
 
 .button-container {
     position: relative;
+    display: flex; /* Add flex display for side-by-side alignment */
+    justify-content: space-between;
+}
+
+.game-button:first-child {
+    margin-right: 20px; /* This adds 20 pixels of space to the right side of the first image */
 }
 
 .game-button {
-    padding: 10px 20px;
-    margin: 5px;
-    color: white;
-    border: none;
-    border-radius: 5px;
     cursor: pointer;
-    width: 200px;
-    height: 50px;
-    font-size: 16px;
+    width: 50%; /* each image will take half of the container's width */
+    height: 50vh; /* each image will take half of the viewport height */
+    object-fit: cover; /* to ensure the image fits within the specified dimensions */
+    border-radius: 5px;
+    margin: 0; /* remove margin to make images fill more of the page */
 }
 
-.blue-button {
-    background-color: royalblue;
-}
-
-.gold-button {
-    background-color: gold;
-}
