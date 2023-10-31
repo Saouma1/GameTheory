@@ -7,11 +7,28 @@
     <title>Centered Usernames</title>
     <link rel="stylesheet" type="text/css" href="../../css/studentWaitingRoom.css">
     <style>
+        @keyframes floatEffect {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.username {
+    animation: floatEffect 3s infinite;
+    transition-timing-function: ease-in-out;
+}
+
         .usernames-container {
             display: flex;
             justify-content: space-evenly;
             align-items: center;
-            height: 80vh;
+            height: 50vh;
             flex-direction: row;
         }
 
@@ -28,6 +45,7 @@
             font-family: Roboto;
             font-weight: 400;
             text-align: center;
+            box-shadow: 0px 10px 15px -10px rgba(0, 0, 0, 1);
         }
 
         .header {
