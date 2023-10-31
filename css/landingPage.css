@@ -14,13 +14,10 @@ h1{
     top: 90px;
     font-size: 36px;
 }
-h2{
+#connectionStatusLabel{
     text-align: center;
     color: black;
-    width: 100%;
     margin-top: 0px;
     padding-bottom: 5px;
-    position: absolute;
-    top: 140px;
     font-size: 32px;
 }
