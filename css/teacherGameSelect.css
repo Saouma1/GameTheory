@@ -13,12 +13,21 @@
     margin-right: 20px; /* This adds 20 pixels of space to the right side of the first image */
 }
 
-.game-button {
-    cursor: pointer;
-    width: 50%; /* each image will take half of the container's width */
-    height: 50vh; /* each image will take half of the viewport height */
-    object-fit: cover; /* to ensure the image fits within the specified dimensions */
-    border-radius: 5px;
-    margin: 0; /* remove margin to make images fill more of the page */
+
+.game-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;  /* Assign 50% width to each wrapper so they remain side-by-side */
+    margin-right: 20px;
+    margin-left: 20px;
 }
 
+.game-button {
+    cursor: pointer;
+    width: 100%; /* the image will take the full width of its parent */
+    height: 50vh;
+    object-fit: cover;
+    border-radius: 5px;
+    margin: 0;
+}
