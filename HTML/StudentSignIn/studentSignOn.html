@@ -1,17 +1,15 @@
-STUDENTSIGNON
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" type="text/css" href="../../css/TeacherSignOn.css">
 
         <script type="text/javascript">
             function submitForm() {
                 var email = document.getElementById("Email").value;
-                var password = document.getElementById("password").value;
         
                 // Add your validation logic here if needed, e.g.,
-                if(email === "" || password === "") {
-                    alert("Email and password are required!");
+                if(email === "") {
+                    alert("Email is required!");
                     return false;
                 }
         
@@ -22,21 +20,20 @@ STUDENTSIGNON
         
     </head>
     <body>
-        <!---this design needs a definite update according to the wireframes--->
-        
-        <div id="studentSignOn" style="width: 100%; height: 100%; position: relative">
-            <h1 id="signInHeader">
-                Sign In
-            </h1>
+
+        <div class="container">
+            <h2 id="signInHeader">Sign In</h2>
+
             <form method="GET" action="studentWaitingRoom.html">
-                <div id="studentUsername">
-                    <label for="Email" name="emailLabel" id="email">&nbsp;&nbsp;Email</label>
-                    &nbsp;
+                <div class="input-container">
+                    <label for="Email" class="input-label">Email</label>
                     <input name="Email" id="Email" required>
                 </div>
-                <input type="submit" name="signOnsubmit" id="signOnsubmit" value="Submit" onclick="return submitForm()">
+
+                <input type="submit" class="input" value="Submit" onclick="return submitForm()">
+                <a href="studentCreateProfile.html" class="menu">Create New Account</a>
             </form>
-            <button onclick="window.location.href='studentCreateProfile.html';">Create New Profile</button>
         </div>
+
     </body>
 </html>

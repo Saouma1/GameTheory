@@ -11,25 +11,22 @@
 
 <body>
     <div class="container">
-        <form method="GET" action="../admin/teacherSelectGame.html">
-            <div id="studentUsername">
-                <label for="Email" name="emailLabel" id="email">&nbsp;&nbsp;Email</label>
-                &nbsp;
-                <input name="Email" id="Email" required>
-            </div>
-            <div id="studentPassword">
-                <label for="password" name="passwordLabel" id="passwordLabel">&nbsp;&nbsp;Password</label>
-                &nbsp; &nbsp;
-                <input name="password" id="password" required>
-            </div>
-            <input type="submit" name="signOnsubmit" id="signOnsubmit" value="Submit" onclick="return submitForm()">
-        </form><div class="menu">
-            <a href="teacherCreateProfile.html">  <!-- Added anchor tag here -->
-                <div class="home">Create a profile</div>
-            </a>  <!-- Closing anchor tag -->
-        </div>
         <div class="logo"></div>
+        <h2>The College of St. Scholastica</h2>
+        <form class="form" method="GET" action="../admin/teacherSelectGame.html">
+            <div class="input-container">
+                <input name="Email" id="Email" required placeholder="Email">
+            </div>
+            <div class="input-container">
+                <input type="password" name="password" id="password" required placeholder="Password">
+            </div>
+            <div class="input-container">
+                <input type="submit" name="signOnsubmit" id="signOnsubmit" value="Login">
+            </div>
+        </form>
+        <div class="menu">
+            <a href="teacherCreateProfile.html">Create a profile</a>
+        </div>
     </div>
 </body>
-
 </html>
