@@ -83,11 +83,3 @@ a {
     color: #fff;
 }
 
-.logo {
-    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlLJuAba1B4stIO6wUA78r_kwmrkZY_0X2AS5ihVO5&s'); /* The college logo URL */
-    background-size: 100% 100%; /* This will stretch the image to fill the entire container */
-    background-repeat: no-repeat; /* This will prevent repeating of the logo */
-    width: desired-width; /* Set this to the width of the container */
-    height: desired-height; /* Set this to the height of the container */
-    margin: 20px 0;
-}

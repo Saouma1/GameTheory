@@ -1,10 +1,9 @@
-CreateAProfile
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="../../css/TeacherSignOn.css">
     <title>Create a Profile</title>
     <script type="text/javascript">
         function validateForm() {
@@ -32,33 +31,30 @@ CreateAProfile
             return true;
         }
     </script>
-<!-- This post action is crashing on live server, but working whrn copying path -->
 </head>
 <body>
-    <div id="createProfile" style="width: 100%; height: 100%; position: relative">
-        <h1>Create a Profile Student</h1>
-        <form method="POST" action="studentProfileCreated.html" onsubmit="return validateForm()">
-            <div>
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
+    <div class="container">
+        <div class="logo"></div>
+        <h2>Create a Profile Student</h2>
+        <form method="POST" action="studentProfileCreated.html" onsubmit="return validateForm()" class="form">
+            <div class="input-container">
+                <input type="email" id="email" name="email" required placeholder="Email">
             </div>
-            <div>
-                <label for="firstName">First Name:</label>
-                <input type="text" id="firstName" name="firstName" required>
+            <div class="input-container">
+                <input type="text" id="firstName" name="firstName" required placeholder="First Name">
             </div>
-            <div>
-                <label for="lastName">Last Name:</label>
-                <input type="text" id="lastName" name="lastName" required>
+            <div class="input-container">
+                <input type="text" id="lastName" name="lastName" required placeholder="Last Name">
             </div>
-            <div>
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required>
+            <div class="input-container">
+                <input type="password" id="password" name="password" required placeholder="Password">
             </div>
-            <div>
-                <label for="verifyPassword">Verify Password:</label>
-                <input type="password" id="verifyPassword" name="verifyPassword" required>
+            <div class="input-container">
+                <input type="password" id="verifyPassword" name="verifyPassword" required placeholder="Verify Password">
             </div>
-            <input type="submit" value="Create Profile">
+            <div class="input-container">
+                <input type="submit" value="Create Profile">
+            </div>
         </form>
     </div>
 </body>
