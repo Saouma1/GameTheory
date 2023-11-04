@@ -8,11 +8,13 @@
         <h1 id="gameHeader">{Game Name}</h1>
         <h2 id="gameName">Enter Code to Join Game Room</h2>
         <div id ="codeInput"> <!--- form --->
-            <input type="text" maxlength="6" size="12" id="gameCode" name="gameCode"> 
-            <br>
-            <p id="codeDashes">______</p>
-            <br> <br>
-            <input id="codeSubmit" type="button" value="Submit">
+            <form method = "POST" action="landingPage.html">
+                <input type="text" maxlength="6" size="12" id="gameCode" name="gameCode"> 
+                <br>
+                <p id="codeDashes">______</p>
+                <br> <br>
+                <input id="codeSubmit" type="submit" value="Submit">
+            </form>
         </div>
     </body>
 </html>
