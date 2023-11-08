@@ -9,7 +9,7 @@
             "type": "chrome",
             "request": "launch",
             "name": "Launch Chrome against localhost",
-            "url": "http://localhost:5500/HTMl/index.html",
+            "url": "http://localhost:5500/HTM/index.html",
             "webRoot": "${workspaceFolder}",
             "file": "${workspaceFolder}/index.html"
         }
