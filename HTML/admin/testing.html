@@ -1,26 +1,23 @@
-<!-- index.html (should be in the 'public' directory if you're following the server code above) -->
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Socket.IO test</title>
-  <script src="/socket.io/socket.io.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      var socket = io('http://localhost:5500');
-
-      socket.on('connect', function () {
-        console.log('Connected to the server');
-        socket.emit('test', 'This is a test message from the client!');
-      });
-
-      socket.on('disconnect', function () {
-        console.log('Disconnected from the server');
-      });
-    });
-  </script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Socket.IO Test</title>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/JavaScript/testing.js"></script>
+<style>
+  #chat {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 10px;
+  }
+</style>
 </head>
 <body>
-  <h1>Socket.IO Test</h1>
+<div id="chat">
+  <ul id="messages"></ul>
+  <input id="m" autocomplete="off" /><button onclick="sendMessage()">Send</button>
+</div>
 </body>
 </html>
