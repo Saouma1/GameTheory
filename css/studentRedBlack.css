@@ -1,0 +1,29 @@
+body{
+  overflow: hidden;
+  font-family: Arial;
+  color: #00447C;
+}
+
+#cards{
+    position: absolute;
+    width: 60%;
+    margin: 0 auto;
+    text-align: center;
+    top: 100px;
+    left: 10%;
+}
+
+#kingHearts, #kingSpades{
+    width: 245px;
+    height: 350px;
+    /*h2w ratio: 1.428*/
+}
+
+#instructions{
+    position: absolute;
+    width: 20%;
+    margin: 0 auto;
+    text-align: center;
+    top: 200px;
+    left: 70%;
+}
