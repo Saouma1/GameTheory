@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="../../css/studentRedBlack.css">
+</head>
+<body>
+  <iframe scrolling="no" style="border:none; height: 100px; width: 100%;" src="..\header.html"></iframe>
+    
+  <!--- fix positioning with CSS --->
+    <div id="results">
+        <table>
+            <tr>
+                <td colspan="2">
+                    <h1 class="bottomHalf" id="roundNumHead">Round: <span id="roundNum">3</span></h1>  <!--- make dynamic --->
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h1 class="short">You Played</h1>
+                </td>
+                <td>
+                    <h1 class="short">Your Partner Played:</h1>
+                </td>
+            </tr>
+            <!--- the wireframes have an off-white filter over the cards --->
+            <!--- might be difficult to display different image depending on round info-->
+            <tr>
+                <td class="card">
+                    <img src="..\..\img\kingHearts.svg" id="youPlayed">
+                </td>
+                <td class="card">
+                    <img src="..\..\img\kingSpades.svg" id="partnerPlayed">
+                </td>
+            </tr>
+        </table>
+    </div>
+    <!--- make points dynamic --->
+    <!--- fix styling with CSS --->
+    <div id="roundResults">
+        <table>
+            <tr>
+                <td colspan="2"><u>Returns:</u></td>
+            </tr>
+            <tr>
+                <td><strong>You:</strong></td>
+                <td><span id="youPoints">200</span></td>
+            </tr>
+                <td><strong>Partner:</strong></td>
+                <td><span id="partnerPoints">0</span></td>
+            <tr>
+            </tr>
+        </table>
+    </div>
+    <div id="totalScores">
+        <table>
+            <tr>
+                <td colspan="2"><u>Total Scores:</u></td>
+            </tr>
+            <tr>
+                <td><strong>You:</strong></td>
+                <td><span id="youTotal">550</span></td>
+            </tr>
+                <td><strong>Partner:</strong></td>
+                <td><span id="partnerTotal">50</span></td>
+            <tr>
+            </tr>
+        </table>
+    </div>
+
+</body>
+</html>

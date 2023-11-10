@@ -13,10 +13,19 @@ body{
     left: 10%;
 }
 
-#kingHearts, #kingSpades{
+#kingHearts, #kingSpades, #youPlayed, #partnerPlayed{
     width: 245px;
     height: 350px;
     /*h2w ratio: 1.428*/
+}
+
+#roundNumHead{
+  text-align: left;
+}
+
+.card{
+  margin: 0 auto;
+  width: 50%;
 }
 
 #instructions{
@@ -28,6 +37,22 @@ body{
     left: 70%;
 }
 
+#roundResults, #totalScores{
+  position: absolute;
+  width: 20%;
+  margin: 0 auto;
+  text-align: center;
+  left: 70%;
+}
+
+#roundResults{
+  top: 200px;
+}
+
+#totalScores{
+  top: 300px;
+}
+
 #pleaseWait{
     position: absolute;
     width: 20%;
@@ -37,17 +62,26 @@ body{
     left: 65%;
 }
 
+.short{
+  margin: 0 auto;
+  text-align: center;
+}
+
+.bottomHalf{
+  margin-top: 0;
+}
+
 .loader {
-    border: 16px solid #f3f3f3;
-    border-radius: 50%;
-    border-top: 16px solid #3498db;
-    width: 120px;
-    height: 120px;
-    /*-webkit-animation: spin 2s linear infinite; /* Safari */
-    animation: spin 2s linear infinite;
-  }
-  
-  @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 120px;
+  height: 120px;
+  /*-webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
