@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Socket.IO Test</title>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/JavaScript/testing.js"></script>
+<style>
+  #chat {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 10px;
+  }
+</style>
+</head>
+<body>
+<div id="chat">
+  <ul id="messages"></ul>
+  <input id="m" autocomplete="off" /><button onclick="sendMessage()">Send</button>
+</div>
+</body>
+</html>
