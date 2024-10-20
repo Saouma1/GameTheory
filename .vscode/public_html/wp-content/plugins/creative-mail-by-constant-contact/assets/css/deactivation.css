@@ -1,0 +1,48 @@
+.ce4wp-deactivate-survey-modal {
+  display: none;
+  table-layout: fixed;
+  position: fixed;
+  z-index: 9999;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  font-size: 14px;
+  top: 0;
+  left: 0;
+  background: rgba(0,0,0,0.8);
+}
+.ce4wp-deactivate-survey-wrap {
+	display: table-cell;
+	vertical-align: middle;
+}
+.ce4wp-deactivate-survey {
+	background-color: #f1f1f1;
+	border: 0 solid #ccc;
+	border-radius: 3px;
+	margin: 0 auto;
+	padding: 12px;
+	width: 340px;
+	direction: ltr;
+}
+
+.ce4wp-deactivate-survey fieldset {
+	margin:25px;
+}
+
+.ce4wp-deactivate-survey span {
+	float: left;
+	margin: 5px;
+}
+
+.ce4wp-deactivate-survey span input {
+	padding-right: 5px;
+}
+
+.ce4wp-deactivate-survey a.button {
+	white-space: normal;
+	height: auto;
+}
+
+#ce4wp-deactivate-survey-form-success {
+	display: none;
+}

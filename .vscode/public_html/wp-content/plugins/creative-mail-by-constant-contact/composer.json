@@ -1,0 +1,28 @@
+{
+    "config": {
+        "optimize-autoloader": true
+    },
+    "require": {
+        "defuse/php-encryption": "^2.2",
+        "firebase/php-jwt": "^5.0",
+        "ext-curl": "*",
+        "ext-json": "*",
+        "a5hleyrich/wp-background-processing": "^1.0",
+        "ext-zip": "*",
+        "squizlabs/php_codesniffer": "*",
+        "phpcompatibility/php-compatibility": "^9.3",
+        "monolog/monolog": "^2.8"
+    },
+    "autoload": {
+        "psr-4": {
+            "CreativeMail\\Managers\\": "src/managers/",
+            "CreativeMail\\Models\\": "src/models/",
+            "CreativeMail\\Helpers\\": "src/helpers/",
+            "CreativeMail\\Modules\\": "src/modules/",
+            "CreativeMail\\Constants\\": "src/constants/",
+            "CreativeMail\\Integrations\\": "src/integrations/",
+            "CreativeMail\\Blocks\\": "src/blocks/",
+            "CreativeMail\\": "src/"
+        }
+    }
+}

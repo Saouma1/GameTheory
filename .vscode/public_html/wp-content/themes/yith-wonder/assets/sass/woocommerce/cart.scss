@@ -1,0 +1,143 @@
+/**
+ * Cart page
+ */
+
+body.woocommerce-cart {
+	.site-content {
+		overflow-x: hidden;
+	}
+
+    form.woocommerce-cart-form {
+        margin-bottom: 35px;
+    }
+	.cart-collaterals {
+        margin-bottom: 35px;
+
+		.cart_totals {
+			background: #f7f7f7;
+            padding: 30px;
+			position: relative;
+            width: 100%;
+
+			h2 {
+				display: none;
+			}
+
+			table {
+                border: none;
+				margin-bottom: 50px;
+
+				td,
+				th {
+					border: none;
+				}
+
+				td {
+					font-weight: normal;
+					text-align: right;
+				}
+
+				tr.order-total {
+					color: var(--wp--preset--color--primary);
+					font-size: 1.125rem;
+
+					td,
+					th,
+					* {
+						font-size: inherit;
+						font-weight: bold;
+					}
+				}
+
+				tr.shipping {
+					th {
+						padding-right: 0;
+						text-align: initial;
+					}
+					td {
+						padding-left: 0;
+						text-align: initial;
+					}
+				}
+
+				#shipping_method,
+				.woocommerce-shipping-destination {
+					clear: both;
+					font-size: 0.875rem;
+					line-height: normal;
+					margin-bottom: 50px;
+
+					.amount {
+						font-weight: normal;
+					}
+					li {
+						text-align: initial;
+					}
+				}
+
+				.woocommerce-shipping-destination {
+					margin: 5px 0;
+				}
+
+				form.woocommerce-shipping-calculator {
+					font-size: 0.875em;
+				}
+
+				.shipping-calculator-form {
+					padding-left: 10%;
+					p {
+						line-height: normal;
+						padding-right: 0;
+						text-align: initial;
+					}
+
+					button[type="submit"] {
+						float: right;
+						margin-right: 0;
+					}
+				}
+			}
+		}
+	}
+
+	.variation dt {
+		font-size: .875em;
+		font-weight: 700;
+	}
+	.variation dd {
+		font-size: 0.875em;
+		margin: 0 0 1em;
+	}
+
+	.cross-sells {
+		clear: both;
+	}
+}
+
+@media (min-width: 992px) {
+    body.woocommerce-cart {
+        form.woocommerce-cart-form {
+            box-sizing: border-box;
+            display: inline-block;
+            float: left;
+            margin-bottom: 35px;
+            padding-right: 30px;
+            padding-right: 30px;
+            width: 60%;
+        }
+    
+        .cart-collaterals {
+            box-sizing: border-box;
+            display: inline-block;
+            float: left;
+            margin-bottom: 35px;
+            width: 40%;
+    
+            .cart_totals {
+                float: none;
+                width: 100%;
+            }
+        }
+    }
+    
+}

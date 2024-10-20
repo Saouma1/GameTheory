@@ -1,0 +1,79 @@
+{
+	"version": 2,
+	"title": "Blue Shades",
+	"settings": {
+		"color": {
+			"palette": [
+				{
+					"slug": "base",
+					"color": "#ffffff",
+					"name": "Base"
+				},
+				{
+					"slug": "contrast",
+					"color": "#000000",
+					"name": "Contrast"
+				},
+				{
+					"slug": "primary",
+					"color": "#1B5377",
+					"name": "Primary"
+				},
+				{
+					"slug": "secondary",
+					"color": "#6576a1",
+					"name": "Secondary"
+				},
+				{
+					"slug": "tertiary",
+					"color": "#d48620",
+					"name": "Tertiary"
+				},
+				{
+					"slug": "header-background",
+					"color": "#245376",
+					"name": "Header background"
+				},
+				{
+					"slug": "header-foreground",
+					"color": "#ffffff",
+					"name": "Header foreground"
+				},
+				{
+					"slug": "header-titles",
+					"color": "#ffffff",
+					"name": "Header titles"
+				},
+				{
+					"slug": "secondary-background",
+					"color": "#245376",
+					"name": "Secondary background"
+				},
+				{
+					"slug": "secondary-foreground",
+					"color": "#ffffff",
+					"name": "Secondary foreground"
+				}
+			],
+			"gradients": [
+				{
+					"slug": "v-tertiary-primary",
+					"gradient": "linear-gradient(to bottom, #1B5377 0%,#6576a1 100%)",
+					"name": "Vertical primary to secondary"
+				}
+			]
+		}
+	},
+	"styles": {
+		"typography": {
+			"fontFamily": "var(--wp--preset--font-family--raleway)"
+		},
+		"blocks": {
+			"core/heading": {
+				"typography": {
+					"fontFamily": "var(--wp--preset--font-family--oswald)"
+				}
+			}
+		}
+	}
+}
