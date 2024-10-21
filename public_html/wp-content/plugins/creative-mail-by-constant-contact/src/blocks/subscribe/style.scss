@@ -1,0 +1,98 @@
+.wp-block-ce4wp-subscribe {
+  max-width: 840px;
+  margin: 0 auto;
+  .title {
+    margin-bottom: 0;
+  }
+  .subTitle {
+    margin-top: 0;
+    font-size: 0.8em;
+  }
+  .disclaimer {
+    margin-top: 5px;
+    font-size: 0.8em;
+    .disclaimer-label {
+      margin-left: 10px;
+    }
+  }
+  .inputBlock {
+    width: 100%;
+    margin-bottom: 10px;
+    input {
+      width: 100%;
+    }
+    label {
+      display: inline-block;
+    }
+  }
+  .submit-button {
+    margin-top: 25px;
+    display: block;
+  }
+  .required-text {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    margin-left: 0.3em;
+  }
+  .onSubmission {
+    height: 0;
+    max-width: 840px;
+    margin: 0 auto;
+  }
+  .firstNameSummary .lastNameSummary {
+    text-transform: capitalize;
+  }
+  .ce4wp-inline-notification {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 13px 10px;
+    width: 100%;
+    height: 40px;
+
+    border-style: solid;
+    border-color: orange;
+    border-width: 1px;
+    border-left-width: 4px;
+    border-radius: 3px;
+
+    /* Orange/ Background */
+    background: rgba(255, 133, 15, 0.1);
+    /* Inside Auto Layout */
+    flex: none;
+    order: 0;
+    flex-grow: 1;
+    margin: 0px 0px;
+  }
+  .ce4wp-inline-warning-text {
+    /* Body / Body 2 */
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;
+    /* identical to box height, or 143% */
+
+    display: flex;
+    align-items: center;
+
+    /* Orange / Text */
+
+    color: #571600;
+    margin-left: 9px;
+  }
+  .ce4wp-inline-warning-icon {
+    color: orange;
+  }
+  .ce4wp-inline-warning-arrow {
+    color: #571600;
+    margin-left: auto;
+  }
+  .ce4wp-banner-clickable {
+    cursor: pointer;
+  }
+}
+
+.ce4wp-link {
+  cursor: pointer;
+}

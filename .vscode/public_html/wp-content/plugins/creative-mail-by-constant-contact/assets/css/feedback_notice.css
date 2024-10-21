@@ -1,0 +1,78 @@
+#ce4wp-admin-feedback-notice {
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	user-select: none;
+	margin: 3rem 1.25rem 0 auto;
+}
+
+@media screen and (max-width: 782px) {
+	#ce4wp-admin-feedback-notice {
+		margin-top: calc(3rem + 20px);
+		margin-right: 12px;
+	}
+}
+
+#ce4wp-admin-feedback-notice[hidden] {
+	display: none;
+}
+
+#ce4wp-admin-feedback-notice .icon {
+	margin-right: 0.5em;
+}
+
+#ce4wp-admin-feedback-notice .icon:not(.dashicons) {
+	height: 3em;
+}
+
+#ce4wp-admin-feedback-notice .content {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+}
+
+#ce4wp-admin-feedback-notice .content .ce-logo {
+	height: 0.9em;
+	transform: translateY(.1em);
+}
+
+#ce4wp-admin-feedback-notice .content p:not(:last-child) {
+	margin-bottom: 0;
+}
+
+#ce4wp-admin-feedback-notice .content :not(:first-child) {
+	margin-top: 0;
+}
+
+#ce4wp-admin-feedback-notice #close {
+	width: 16px;
+	height: 16px;
+	margin-left: 0.3em;
+	cursor: pointer;
+}
+
+#ce4wp-admin-feedback-notice #close::before {
+	color: #6f6f6f;
+	font: 400 16px/1 dashicons;
+	content: '\f158';
+}
+
+#ce4wp-admin-feedback-notice .dashicons {
+	background-color: #53C65E;
+	border-radius: 50%;
+	font-size: 2em;
+	width: 1.5em;
+	height: 1.5em;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	margin-right: 0.5em;
+}
+
+#ce4wp-admin-feedback-notice .dashicons::before {
+	color: white;
+	transform: translateY(-0.1em);
+}

@@ -1,0 +1,140 @@
+.nfd_business_reviews > div > a {
+	position: relative;
+	display: block;
+	width: 90%;
+	text-align: center;
+	margin: 0 auto;
+	padding: 10px 0;
+}
+
+.nfd_business_reviews > div > a svg {
+	max-width: 50%;
+	margin-bottom: 10px;
+	fill: currentColor
+}
+
+.nfd_modal {
+	display: none;
+	border-radius: 5px;
+}
+
+.nfd_modal_bg {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: #333333;
+	opacity: .6;
+	z-index: 10000;
+}
+
+.nfd_modal_content {
+	position: fixed;
+	text-align: center;
+	top: 25%;
+	margin: 0 25%;
+	width: 50%;
+	min-width: 400px;
+	max-width: 600px;
+	height: auto;
+	background: #fff;
+	border: 1px solid #ccc;
+	z-index: 10100;
+	color: #000;
+}
+
+.nfd_br_list, .nfd_br_contact {
+	padding: 25px;
+}
+
+.nfd_br_close {
+	position: absolute;
+	top: 8px;
+	right: 8px;
+	width: 15px;
+	height: 15px;
+	z-index: 10200;
+	cursor: pointer;
+}
+
+.nfd_modal_content h2 {
+	margin-top: 0;
+}
+
+.nfd_modal_content p {
+	margin-bottom: 10px;
+}
+
+.nfd_modal_content ul {
+	text-align: left;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+.nfd_modal_content ul li {
+	display: inline-block;
+	float: left;
+	width: 50%;
+	margin-bottom: 10px;
+}
+
+.nfd_modal_content ul li a {
+	display: block;
+	width: 92%;
+	border: 1px solid #ccc;
+	line-height: 40px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	border-radius: 5px;
+	margin: 0 auto 10px;
+	text-align: center;
+	text-decoration: none;
+	overflow: hidden;
+	color: #000;
+	background: #ffffff; /* Old browsers */
+	background: -moz-linear-gradient(top, #ffffff 0%, #efefef 60%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, #ffffff 0%, #efefef 60%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, #ffffff 0%, #efefef 60%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#efefef', GradientType=0); /* IE6-9 */
+}
+
+.nfd_modal_content ul li a img {
+	max-width: 90%;
+	max-height: 40px;
+	margin: 0 auto;
+	vertical-align: middle;
+}
+
+.nfd_modal_content ul.odd li:first-child {
+	width: 100%;
+}
+
+.nfd_modal_content ul.odd li:first-child a {
+	width: 96%;
+}
+
+.nfd_br_toggle_sentence {
+	margin-top: 25px;
+	font-size: .8em;
+	clear: both;
+}
+
+.nfd_br_contact {
+	text-align: left;
+}
+
+.nfd_br_contact input {
+	margin-bottom: 15px;
+}
+
+@media only screen and (max-width: 600px) {
+	.nfd_modal_content {
+		position: absolute;
+		top: 46px;
+		width: 100%;
+		min-width: 100%;
+		margin: 0;
+	}
+}
