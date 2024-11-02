@@ -1,126 +1,92 @@
-function displayInfoRedBlack(){
-    // find out what the contents of each card cell are so that we can color the background appropriately
-    let cardElements = document.querySelectorAll(".card");
-    for (let i in cardElements){
-        if(cardElements[i].innerHTML == "R"){
-            document.getElementById(cardElements[i].id).style.backgroundColor = "pink";
-        }
-        if(cardElements[i].innerHTML == "B"){
-            document.getElementById(cardElements[i].id).style.backgroundColor = "gray";
-        }
+// Import MySQL and create a connection pool
+const mysql = require('mysql2/promise');
+
+// Create connection to the database
+const db = mysql.createPool({
+    host: 'localhost',
+    user: 'your_username',
+    password: 'your_password',
+    database: 'your_database'
+});
+
+// Function to display Red/Black game info from the database
+async function displayInfoRedBlack() {
+    try {
+        // Retrieve game details from the URL
+        const url = new URL(window.location.href);
+        const gameDate = url.searchParams.get("d");
+        const playerOne = url.searchParams.get("p1");
+        const playerTwo = url.searchParams.get("p2");
+
+        // Query database for player and game details
+        const [rows] = await db.execute(`
+            SELECT id, card_type
+            FROM red_black_game_cards
+            WHERE game_date = ? AND (player_name = ? OR player_name = ?)
+        `, [gameDate, playerOne, playerTwo]);
+
+        // Update HTML elements with player and game data
+        document.getElementById('playerOneName').innerHTML = playerOne;
+        document.getElementById('headerPlayerOne').innerHTML = playerOne;
+        document.getElementById('tablePlayerOneCard').innerHTML = playerOne;
+        document.getElementById('tablePlayerOnePoints').innerHTML = playerOne;
+        document.getElementById('playerTwoName').innerHTML = playerTwo;
+        document.getElementById('headerPlayerTwo').innerHTML = playerTwo;
+        document.getElementById('tablePlayerTwoCard').innerHTML = playerTwo;
+        document.getElementById('tablePlayerTwoPoints').innerHTML = playerTwo;
+        document.getElementById('gameDate').innerHTML = gameDate;
+
+        // Update card colors based on database results
+        rows.forEach(card => {
+            const cardElement = document.getElementById(card.id);
+            if (card.card_type === "R") {
+                cardElement.style.backgroundColor = "pink";
+            } else if (card.card_type === "B") {
+                cardElement.style.backgroundColor = "gray";
+            }
+        });
+
+    } catch (error) {
+        console.error("Error retrieving Red/Black game info:", error);
     }
-
-    // find date, player names in url
-    let urlFull = window.location.href; // full url
-    // isolate end of url, which contains fname and lname info
-    let dateIndex = urlFull.search("d=");
-    let gameDate = urlFull.slice(dateIndex + 2);
-    let dateEndIndex = gameDate.search("&");
-    gameDate = gameDate.substring(0, dateEndIndex);
-    let p1Index = urlFull.search("p1="); // index of how much to cut off from front
-    let pNames = urlFull.slice(p1Index + 3); // slice out fname variable, adding length of "fname="
-    let p1EndIndex = pNames.search("&"); // index of when lname variable starts
-    let p1Name = pNames.substring(0, p1EndIndex); // extract first name
-    let p2Index = pNames.search("p2="); // search for beginning of fname
-    let p2Name = pNames.slice(p2Index + 3); // slice everything before last name
-    //p1Name = p1Name.charAt(0).toUpperCase() + p1Name.substr(1).toLowerCase();
-    document.getElementById('playerOneName').innerHTML = p1Name;
-    document.getElementById('headerPlayerOne').innerHTML = p1Name;
-    document.getElementById('tablePlayerOneCard').innerHTML = p1Name;
-    document.getElementById('tablePlayerOnePoints').innerHTML = p1Name;
-    document.getElementById('playerTwoName').innerHTML = p2Name;
-    document.getElementById('headerPlayerTwo').innerHTML = p2Name;
-    document.getElementById('tablePlayerTwoCard').innerHTML = p2Name;
-    document.getElementById('tablePlayerTwoPoints').innerHTML = p2Name;
-    document.getElementById('gameDate').innerHTML = gameDate;
 }
-function displayInfoWheatSteel(){
-    // find date, player names in url
-    let urlFull = window.location.href; // full url
-    // isolate end of url, which contains date and team info
-    let dateIndex = urlFull.search("date=");
-    let gameDate = urlFull.slice(dateIndex + 5);
-    let dateEndIndex = gameDate.search("&");
-    gameDate = gameDate.substring(0, dateEndIndex);
-    document.getElementById('gameDate').innerHTML = gameDate;
 
-    // grab team name from url
-    let teamIndex = (urlFull.search("t=") + 2);
-    let teamEndIndex = (urlFull.length);
-    let gameTeam = urlFull.substring(teamIndex, teamEndIndex);
-    gameTeam = decodeURI(gameTeam); // turn %20 back into a space
-    //console.log(gameTeam);
-    document.getElementById('teamName').innerHTML = gameTeam;
 
-    let roundOneWheat = localStorage.getItem("roundOneWheat");
-    let roundTwoWheat = localStorage.getItem("roundTwoWheat");
-    let roundThreeWheat = localStorage.getItem("roundThreeWheat");
-    let roundFourWheat = localStorage.getItem("roundFourWheat");
-    let roundFiveWheat = localStorage.getItem("roundFiveWheat");
+async function displayInfoWheatSteel() {
+    try {
+        // Retrieve game details from the URL
+        const url = new URL(window.location.href);
+        const gameDate = url.searchParams.get("date");
+        const gameTeam = decodeURIComponent(url.searchParams.get("t"));
 
-    document.getElementById('roundOneWheat').innerHTML = roundOneWheat;
-    document.getElementById('roundTwoWheat').innerHTML = roundTwoWheat;
-    document.getElementById('roundThreeWheat').innerHTML = roundThreeWheat;
-    document.getElementById('roundFourWheat').innerHTML = roundFourWheat;
-    document.getElementById('roundFiveWheat').innerHTML = roundFiveWheat;
+        // Query database for Wheat/Steel rounds and trades
+        const [rows] = await db.execute(`
+            SELECT round_num, wheat_count, steel_count, wheat_trade, steel_trade, wheat_consume, steel_consume
+            FROM wheat_steel_game_rounds
+            WHERE game_date = ? AND team_name = ?
+            ORDER BY round_num
+        `, [gameDate, gameTeam]);
 
-    let roundOneSteel = localStorage.getItem("roundOneSteel");
-    let roundTwoSteel = localStorage.getItem("roundTwoSteel");
-    let roundThreeSteel = localStorage.getItem("roundThreeSteel");
-    let roundFourSteel = localStorage.getItem("roundFourSteel");
-    let roundFiveSteel = localStorage.getItem("roundFiveSteel");
+        // Update game date and team in HTML
+        document.getElementById('gameDate').innerHTML = gameDate;
+        document.getElementById('teamName').innerHTML = gameTeam;
 
-    document.getElementById('roundOneSteel').innerHTML = roundOneSteel;
-    document.getElementById('roundTwoSteel').innerHTML = roundTwoSteel;
-    document.getElementById('roundThreeSteel').innerHTML = roundThreeSteel;
-    document.getElementById('roundFourSteel').innerHTML = roundFourSteel;
-    document.getElementById('roundFiveSteel').innerHTML = roundFiveSteel;
+        // Iterate over each round result and update HTML elements accordingly
+        rows.forEach((round, index) => {
+            const roundNumber = index + 1;
 
-    let roundOneWheatTrade = localStorage.getItem("roundOneWheatTrade");
-    let roundTwoWheatTrade = localStorage.getItem("roundTwoWheatTrade");
-    let roundThreeWheatTrade = localStorage.getItem("roundThreeWheatTrade");
-    let roundFourWheatTrade = localStorage.getItem("roundFourWheatTrade");
-    let roundFiveWheatTrade = localStorage.getItem("roundFiveWheatTrade");
+            // Wheat data for rounds
+            document.getElementById(`roundOneWheat`).innerHTML = round.wheat_count;
+            document.getElementById(`roundTwoWheat`).innerHTML = round.wheat_trade;
+            document.getElementById(`roundThreeWheat`).innerHTML = round.wheat_consume;
 
-    document.getElementById('roundOneWheatTrade').innerHTML = roundOneWheatTrade;
-    document.getElementById('roundTwoWheatTrade').innerHTML = roundTwoWheatTrade;
-    document.getElementById('roundThreeWheatTrade').innerHTML = roundThreeWheatTrade;
-    document.getElementById('roundFourWheatTrade').innerHTML = roundFourWheatTrade;
-    document.getElementById('roundFiveWheatTrade').innerHTML = roundFiveWheatTrade;
+            // Steel data for rounds
+            document.getElementById(`roundOneSteel`).innerHTML = round.steel_count;
+            document.getElementById(`roundTwoSteel`).innerHTML = round.steel_trade;
+            document.getElementById(`roundThreeSteel`).innerHTML = round.steel_consume;
+        });
 
-    let roundOneSteelTrade = localStorage.getItem("roundOneSteelTrade");
-    let roundTwoSteelTrade = localStorage.getItem("roundTwoSteelTrade");
-    let roundThreeSteelTrade = localStorage.getItem("roundThreeSteelTrade");
-    let roundFourSteelTrade = localStorage.getItem("roundFourSteelTrade");
-    let roundFiveSteelTrade = localStorage.getItem("roundFiveSteelTrade");
-
-    document.getElementById('roundOneSteelTrade').innerHTML = roundOneSteelTrade;
-    document.getElementById('roundOneSteelTrade').innerHTML = roundOneSteelTrade;
-    document.getElementById('roundOneSteelTrade').innerHTML = roundOneSteelTrade;
-    document.getElementById('roundOneSteelTrade').innerHTML = roundOneSteelTrade;
-    document.getElementById('roundOneSteelTrade').innerHTML = roundOneSteelTrade;
-
-    let roundOneWheatConsume = localStorage.getItem("roundOneWheatConsume");
-    let roundTwoWheatConsume = localStorage.getItem("roundTwoWheatConsume");
-    let roundThreeWheatConsume = localStorage.getItem("roundThreeWheatConsume");
-    let roundFourWheatConsume = localStorage.getItem("roundFourWheatConsume");
-    let roundFiveWheatConsume = localStorage.getItem("roundFiveWheatConsume");
-
-    document.getElementById('roundOneWheatConsume').innerHTML = roundOneWheatConsume;
-    document.getElementById('roundTwoWheatConsume').innerHTML = roundTwoWheatConsume;
-    document.getElementById('roundThreeWheatConsume').innerHTML = roundThreeWheatConsume;
-    document.getElementById('roundFourWheatConsume').innerHTML = roundFourWheatConsume;
-    document.getElementById('roundFiveWheatConsume').innerHTML = roundFiveWheatConsume;
-
-    let roundOneSteelConsume = localStorage.getItem("roundOneSteelConsume");
-    let roundTwoSteelConsume = localStorage.getItem("roundTwoSteelConsume");
-    let roundThreeSteelConsume = localStorage.getItem("roundThreeSteelConsume");
-    let roundFourSteelConsume = localStorage.getItem("roundFourSteelConsume");
-    let roundFiveSteelConsume = localStorage.getItem("roundFiveSteelConsume");
-
-    document.getElementById('roundOneSteelConsume').innerHTML = roundOneSteelConsume;
-    document.getElementById('roundTwoSteelConsume').innerHTML = roundTwoSteelConsume;
-    document.getElementById('roundThreeSteelConsume').innerHTML = roundThreeSteelConsume;
-    document.getElementById('roundFourSteelConsume').innerHTML = roundFourSteelConsume;
-    document.getElementById('roundFiveSteelConsume').innerHTML = roundFiveSteelConsume;
+    } catch (error) {
+        console.error("Error retrieving Wheat/Steel game info:", error);
+    }
 }

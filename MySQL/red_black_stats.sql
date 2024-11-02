@@ -1,0 +1,20 @@
+CREATE TABLE red_black_stats (
+    game_id INT,
+    black_total INT,
+    black_average FLOAT,
+    red_total INT,
+    red_average FLOAT,
+    highest_name VARCHAR(50),
+    highest_score INT,
+    lowest_name VARCHAR(50),
+    lowest_score INT,
+    highest_black_name VARCHAR(50),
+    highest_black_score INT,
+    lowest_black_name VARCHAR(50),
+    lowest_black_score INT,
+    highest_red_name VARCHAR(50),
+    highest_red_score INT,
+    lowest_red_name VARCHAR(50),
+    lowest_red_score INT,
+    FOREIGN KEY (game_id) REFERENCES game_info(game_id)
+);
