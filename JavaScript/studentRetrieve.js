@@ -1,49 +1,57 @@
-// find max ID in DB
+// Import MySQL and create a connection pool
+const mysql = require('mysql2/promise');
 
-function displayInfo(){
-    // automatically returns empty string if no value, null if field does not exist
-        // let firstName = localStorage.getItem("firstName"); // retrieves it from the current session
-        // let lastName = localStorage.getItem("lastName");
-    // use first and last name pulled from url to identify record in storage
-    let email = localStorage.getItem("email");
-    
-    let redBlackNum = localStorage.getItem("redBlackNum");
-    let redBlackHigh = localStorage.getItem("redBlackHigh");
-    let redBlackLow = localStorage.getItem("redBlackLow");
-    let redBlackGPA = localStorage.getItem("redBlackGPA");
+// Create connection to the database
+const db = mysql.createPool({
+    host: 'localhost',
+    user: 'root',
+    password: 'j&hghasfdk(&5H53HG&^8&*%^$&jnb%&*(&^%$hFGHJKJHGFCV234567%&%',
+    database: 'css_game_theory'
+});
 
-    let wheatSteelNum = localStorage.getItem("wheatSteelNum");
-    let wheatHigh = localStorage.getItem("wheatHigh");
-    let wheatGoalNum = localStorage.getItem("wheatGoalNum");
-    let steelHigh = localStorage.getItem("steelHigh");
-    let steelGoalNum = localStorage.getItem("steelGoalNum");
+// Function to retrieve and display student information based on URL parameters
+async function displayInfo() {
+    // Get URL parameters (assuming the URL structure is consistent with fname and lname parameters)
+    const urlFull = window.location.href;
+    const urlFnameIndex = urlFull.search("fname=");
+    const urlNames = urlFull.slice(urlFnameIndex + 6);
+    const urlFNameEndIndex = urlNames.search("&");
+    const urlFName = urlNames.substring(0, urlFNameEndIndex);
+    const urlLNameIndex = urlNames.search("=");
+    const urlLName = urlNames.slice(urlLNameIndex + 1);
 
-    let urlFull = window.location.href; // full url
-    // isolate end of url, which contains fname and lname info
-    let urlFnameIndex = urlFull.search("fname="); // index of how much to cut off from front
-    let urlNames = urlFull.slice(urlFnameIndex + 6); // slice out fname variable, adding length of "fname="
-    let urlFNameEndIndex = urlNames.search("&"); // index of when lname variable starts
-    let urlFName = urlNames.substring(0, urlFNameEndIndex); // extract first name
-    let urlLNameIndex = urlNames.search("="); // search for beginning of fname
-    let urlLName = urlNames.slice(urlLNameIndex + 1); // slice everything before last name
+    try {
+        // Query the database for student information
+        const [rows] = await db.execute(`
+            SELECT email, redBlackNum, redBlackHigh, redBlackLow, redBlackGPA,
+                   wheatSteelNum, wheatHigh, wheatGoalNum, steelHigh, steelGoalNum
+            FROM students
+            WHERE firstName = ? AND lastName = ?
+        `, [urlFName, urlLName]);
 
-    // display information from url
-    document.getElementById('studentHeader').innerHTML = "Student (" + urlFName + " " + urlLName + ")";
-    document.getElementById('firstNameDisplay').innerHTML = urlFName;
-    document.getElementById('lastNameDisplay').innerHTML = urlLName;
+        // Assuming one result (rows[0]), use the result data to populate HTML elements
+        if (rows.length > 0) {
+            const data = rows[0];
+            document.getElementById('studentHeader').innerHTML = `Student (${urlFName} ${urlLName})`;
+            document.getElementById('firstNameDisplay').innerHTML = urlFName;
+            document.getElementById('lastNameDisplay').innerHTML = urlLName;
+            
+            document.getElementById('emailDisplay').innerHTML = data.email;
+            document.getElementById('redBlackNum').innerHTML = data.redBlackNum;
+            document.getElementById('redBlackHigh').innerHTML = data.redBlackHigh;
+            document.getElementById('redBlackLow').innerHTML = data.redBlackLow;
+            document.getElementById('redBlackGPA').innerHTML = data.redBlackGPA;
+            
+            document.getElementById('wheatSteelNum').innerHTML = data.wheatSteelNum;
+            document.getElementById('wheatHigh').innerHTML = data.wheatHigh;
+            document.getElementById('wheatGoalNum').innerHTML = data.wheatGoalNum;
+            document.getElementById('steelHigh').innerHTML = data.steelHigh;
+            document.getElementById('steelGoalNum').innerHTML = data.steelGoalNum;
+        } else {
+            console.log("No student data found for the provided name.");
+        }
 
-    // now display information from localStorage using url info as IDs
-    document.getElementById('emailDisplay').innerHTML = email;
-
-    document.getElementById('redBlackNum').innerHTML = redBlackNum;
-    document.getElementById('redBlackHigh').innerHTML = redBlackHigh;
-    document.getElementById('redBlackLow').innerHTML = redBlackLow;
-    document.getElementById('redBlackGPA').innerHTML = redBlackGPA;
-
-    document.getElementById('wheatSteelNum').innerHTML = wheatSteelNum;
-    document.getElementById('wheatHigh').innerHTML = wheatHigh;
-    document.getElementById('wheatGoalNum').innerHTML = wheatGoalNum;
-    document.getElementById('steelHigh').innerHTML = steelHigh;
-    document.getElementById('steelGoalNum').innerHTML = steelGoalNum;
-    
+    } catch (error) {
+        console.error("Error fetching data:", error);
+    }
 }

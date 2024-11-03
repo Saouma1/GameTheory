@@ -1,0 +1,21 @@
+CREATE TABLE wheat_steel_stats (
+    game_id INT,
+    teams_four BOOLEAN,
+    period_num INT,
+    both_goals VARCHAR(255),
+    one_goal VARCHAR(255),
+    no_goals VARCHAR(255),
+    wheat_produce_total INT,
+    wheat_produce_average FLOAT,
+    wheat_consume_total INT,
+    wheat_consume_average FLOAT,
+    wheat_trade_total INT,
+    wheat_trade_average FLOAT,
+    steel_produce_total INT,
+    steel_produce_average FLOAT,
+    steel_consume_total INT,
+    steel_consume_average FLOAT,
+    steel_trade_total INT,
+    steel_trade_average FLOAT,
+    FOREIGN KEY (game_id) REFERENCES game_info(game_id)
+);

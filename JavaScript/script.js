@@ -1,41 +1,64 @@
-// if we need to delay anything by a number of milliseconds
-// wait(1000) delays for 1 second
-var wait = (ms) => {
-    const start = Date.now();
-    let now = start;
-    while (now - start < ms) {
-      now = Date.now();
-    }
-}
+// Import MySQL and create a connection pool
+const mysql = require('mysql2/promise');
+
+// Database configuration
+const db = mysql.createPool({
+    host: 'localhost',
+    user: 'root',
+    password: 'j&hghasfdk(&5H53HG&^8&*%^$&jnb%&*(&^%$hFGHJKJHGFCV234567%&%',
+    database: 'css_game_theory'
+});
 
 let usernameValue = "";
 let passwordValue = ""; // very secure, don't worry about it
 
-function submitForm(){ // this DOES trigger
-    if(document.getElementById("username") != null){
+// Function to submit form data to the database
+async function submitForm() {
+    if (document.getElementById("username") != null) {
         usernameValue = document.getElementById('username').value;
-        sessionStorage.setItem("username", usernameValue); // AND THIS IS HOW WE SAVE IT within a session
-            // localStorage saves between sessions
-    }
-    else{
+    } else {
         usernameValue = "submitForm() NULL";
     }
-    if(document.getElementById("password") != null){
+
+    if (document.getElementById("password") != null) {
         passwordValue = document.getElementById('password').value;
-        sessionStorage.setItem("password", passwordValue);
-    }
-    else{
+    } else {
         passwordValue = "submitForm() NULL";
     }
+
+    try {
+        // Insert the form data into the database
+        await db.execute(`
+            INSERT INTO user_data (username, password)
+            VALUES (?, ?)
+        `, [usernameValue, passwordValue]);
+        console.log("Data submitted successfully.");
+    } catch (error) {
+        console.error("Failed to submit data:", error);
+    }
 }
 
-function logInfo(){
-    // automatically returns empty string if no value
-    console.log(sessionStorage.getItem("username")); // and this is how we retrieve it
-    console.log(sessionStorage.getItem("password"));
+// Function to log user information from the database
+async function logInfo() {
+    try {
+        // Retrieve data from the database
+        const [rows] = await db.query(`
+            SELECT username, password FROM user_data
+            ORDER BY id DESC LIMIT 1
+        `);
+        if (rows.length > 0) {
+            console.log("Username:", rows[0].username);
+            console.log("Password:", rows[0].password);
+        } else {
+            console.log("No data found in the database.");
+        }
+    } catch (error) {
+        console.error("Error retrieving data:", error);
+    }
 }
 
-if(document.getElementById("courseLogo")){
+// Adjust logo and cross styles if elements exist
+if (document.getElementById("courseLogo")) {
     let cssCrossLeft = document.getElementById("scholasticaCrossoutLeft");
     let cssCrossRight = document.getElementById("scholasticaCrossoutRight");
     let courseCrossLeft = document.getElementById("courseCrossoutLeft");
@@ -54,16 +77,16 @@ if(document.getElementById("courseLogo")){
     let borderRadius = 10; // border radius of 10px; static
 
     cssCrossLeft.style.width = (clw * 1.375) + "px";
-    cssCrossLeft.style.left = (cll + (borderRadius/4)) + "px";
-    cssCrossLeft.style.top = (clt + (borderRadius/4)) + "px";
+    cssCrossLeft.style.left = (cll + (borderRadius / 4)) + "px";
+    cssCrossLeft.style.top = (clt + (borderRadius / 4)) + "px";
     cssCrossRight.style.width = (clw * 1.375) + "px";
-    cssCrossRight.style.left = (cll + (borderRadius/4)) + "px";
-    cssCrossRight.style.top = (clt + (borderRadius/4)) + "px";
+    cssCrossRight.style.left = (cll + (borderRadius / 4)) + "px";
+    cssCrossRight.style.top = (clt + (borderRadius / 4)) + "px";
 
     courseCrossLeft.style.width = (clw2 * 1.375) + "px";
-    courseCrossLeft.style.left = (cll2 + (borderRadius/4)) + "px";
-    courseCrossLeft.style.top = (clt2 + (borderRadius/4)) + "px";
+    courseCrossLeft.style.left = (cll2 + (borderRadius / 4)) + "px";
+    courseCrossLeft.style.top = (clt2 + (borderRadius / 4)) + "px";
     courseCrossRight.style.width = (clw2 * 1.375) + "px";
-    courseCrossRight.style.left = (cll2 + (borderRadius/4)) + "px";
-    courseCrossRight.style.top = (clt2 + (borderRadius/4)) + "px";
+    courseCrossRight.style.left = (cll2 + (borderRadius / 4)) + "px";
+    courseCrossRight.style.top = (clt2 + (borderRadius / 4)) + "px";
 }
