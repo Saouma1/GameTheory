@@ -4,9 +4,9 @@ const mysql = require('mysql2/promise');
 // Create connection to the database
 const db = mysql.createPool({
     host: 'localhost',
-    user: 'your_username',
-    password: 'your_password',
-    database: 'your_database'
+    user: 'root',
+    password: 'j&hghasfdk(&5H53HG&^8&*%^$&jnb%&*(&^%$hFGHJKJHGFCV234567%&%',
+    database: 'css_game_theory'
 });
 
 // Function to retrieve and display student information based on URL parameters
