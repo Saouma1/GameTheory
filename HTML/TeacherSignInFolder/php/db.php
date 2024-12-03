@@ -9,7 +9,7 @@ $dbUser = getenv('DB_USER') ?: die('DB_USER is not set.');
 $dbPass = getenv('DB_PASS') ?: die('DB_PASS is not set.');
 
 // Establish database connection
-$mysqli = new mysqli($dbHost, $dbUser, $dbPass, $dbName);
+$mysqli = new mysqli("cssgametheory.com", "txlxmqol_dbUser", "databaseManager", "txlxmqol_GameTheory_2.0");
 
 // Check for connection errors
 if ($mysqli->connect_errno) {
